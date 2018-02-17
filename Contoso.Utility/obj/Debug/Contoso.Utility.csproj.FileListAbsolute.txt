@@ -1,0 +1,7 @@
+E:\antra\code\ContosoWeb\Contoso.Utility\bin\Debug\Contoso.Utility.dll.config
+E:\antra\code\ContosoWeb\Contoso.Utility\bin\Debug\Contoso.Utility.dll
+E:\antra\code\ContosoWeb\Contoso.Utility\bin\Debug\Contoso.Utility.pdb
+E:\antra\code\ContosoWeb\Contoso.Utility\obj\Debug\Contoso.Utility.csprojResolveAssemblyReference.cache
+E:\antra\code\ContosoWeb\Contoso.Utility\obj\Debug\Contoso.Utility.csproj.CoreCompileInputs.cache
+E:\antra\code\ContosoWeb\Contoso.Utility\obj\Debug\Contoso.Utility.dll
+E:\antra\code\ContosoWeb\Contoso.Utility\obj\Debug\Contoso.Utility.pdb

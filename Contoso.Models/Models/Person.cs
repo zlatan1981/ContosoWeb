@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Contoso.Models.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Contoso.Model {
     [Table("Person")]
-    public class Person {
+    public class Person : AudibleEntity {
 
         public int Id { get; set; }
         [Required, MaxLength(50)]
@@ -31,12 +32,7 @@ namespace Contoso.Model {
         public string State { get; set; }
         [MaxLength(10)]
         public string ZipCode { get; set; }
-        public DateTime CreatedAt { get; set; }
-        [Required]
-        public string CreatedBy { get; set; }
 
-        public DateTime? UpdatedAt { get; set; }
-        public string UpdateBy { get; set; }
         [MaxLength(50)]
         public string Password { get; set; }
         public string Salt { get; set; }

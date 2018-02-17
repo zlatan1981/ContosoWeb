@@ -57,6 +57,10 @@
     <Compile Include="Migrations\201802172213455_RenameSomeClassToSingle.Designer.cs">
       <DependentUpon>201802172213455_RenameSomeClassToSingle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802172245530_AddAudibleEntityInherit.cs" />
+    <Compile Include="Migrations\201802172245530_AddAudibleEntityInherit.Designer.cs">
+      <DependentUpon>201802172245530_AddAudibleEntityInherit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IRepositories\ICourseRepository.cs" />
@@ -87,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802172213455_RenameSomeClassToSingle.resx">
       <DependentUpon>201802172213455_RenameSomeClassToSingle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802172245530_AddAudibleEntityInherit.resx">
+      <DependentUpon>201802172245530_AddAudibleEntityInherit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

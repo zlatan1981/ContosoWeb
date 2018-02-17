@@ -15,3 +15,4 @@ E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.pdb
 E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.ContosoWebFirst.resources
 E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.csproj.GenerateResource.Cache
 E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.RenameSomeClassToSingle.resources
+E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.AddAudibleEntityInherit.resources

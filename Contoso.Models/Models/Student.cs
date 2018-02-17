@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Contoso.Models.Common;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Contoso.Model {
     [Table("Students")]
-    public class Student {
+    public class Student : AudibleEntity {
         [Key, ForeignKey("Person")]
         public int Id { get; set; }
         public virtual Person Person { get; set; }

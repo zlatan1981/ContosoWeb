@@ -7,7 +7,11 @@ using System.Threading.Tasks;
 
 namespace Contoso.Data.Repositories {
 
-    class StudentRepository : Repository<Student>, IStudentRepository {
+    public class StudentRepository : Repository<Student>, IStudentRepository {
+
+        public StudentRepository(ContosoContext context) : base(context) {
+
+        }
 
 
     }

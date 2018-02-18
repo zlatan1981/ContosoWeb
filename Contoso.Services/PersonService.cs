@@ -35,8 +35,7 @@ namespace Contoso.Services {
         }
 
 
-
-        public void AddPerson(Person person, List<string> roles) {
+        public int AddPerson(Person person, List<string> roles) {
             throw new NotImplementedException();
         }
 
@@ -53,7 +52,7 @@ namespace Contoso.Services {
 
         IPersonRepository Persons { get; }
         int Complete();
-        void AddPerson(Person person, List<string> roles);
+        int AddPerson(Person person, List<string> roles);
         List<Person> GetPeopleByRole(int roleId);
 
 

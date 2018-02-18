@@ -13,7 +13,7 @@ namespace Contoso.Model {
     [Table("Departments")]
     public class Department : AudibleEntity {
 
-        public int Id { get; set; }
+
         [MaxLength(50)]
         public string Name { get; set; }
         public decimal Budget { get; set; }

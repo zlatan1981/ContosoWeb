@@ -11,7 +11,7 @@ namespace Contoso.Model {
 
     [Table("Enrollments")]
     public class Enrollment : AudibleEntity {
-        public int Id { get; set; }
+
         [ForeignKey("Course")]
         public int? CourseId { get; set; }
         public Course Course { get; set; }

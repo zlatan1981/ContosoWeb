@@ -12,7 +12,7 @@ namespace Contoso.Model {
     [Table("OfficeAssignments")]
     public class OfficeAssignments : AudibleEntity {
         [Key, ForeignKey("Instructor")]
-        public int InstructorId { get; set; }
+        public override int Id { get; set; }
         public Instructor Instructor { get; set; }
         [MaxLength(50)]
         public string Location { get; set; }

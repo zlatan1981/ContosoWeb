@@ -10,5 +10,6 @@ namespace Contoso.Data.Repositories {
     public interface IStudentRepository : IRepository<Student> {
 
 
+
     }
 }

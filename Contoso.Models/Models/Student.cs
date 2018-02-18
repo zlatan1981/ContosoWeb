@@ -11,7 +11,7 @@ namespace Contoso.Model {
     [Table("Students")]
     public class Student : AudibleEntity {
         [Key, ForeignKey("Person")]
-        public int Id { get; set; }
+        public override int Id { get; set; }
         public virtual Person Person { get; set; }
         public DateTime? EnrollmentDate { get; set; }
 
@@ -19,6 +19,7 @@ namespace Contoso.Model {
 
         public Student() {
             CreatedAt = DateTime.Now;
+            EnrollmentDate = DateTime.Now;
         }
 
 

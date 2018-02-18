@@ -11,7 +11,7 @@ namespace Contoso.Model {
     [Table("Person")]
     public class Person : AudibleEntity {
 
-        public int Id { get; set; }
+
         [Required, MaxLength(50)]
         public string LastName { get; set; }
         [Required, MaxLength(50)]

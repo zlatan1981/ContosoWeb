@@ -18,14 +18,14 @@ namespace Contoso.Services {
             Context = context;
             Roles = new RoleRepository(Context);
         }
-
+        // add role and return Id
         public int AddRole(Role r) {
             return Roles.Add(r);
 
         }
 
         public List<Role> GetAllRoles() {
-            throw new NotImplementedException();
+            return (List<Role>)Roles.GetAll();
         }
 
 

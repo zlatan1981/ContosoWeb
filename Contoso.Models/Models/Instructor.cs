@@ -13,7 +13,7 @@ namespace Contoso.Model {
     public class Instructor : AudibleEntity {
 
         [Key, ForeignKey("Person")]
-        public int Id { get; set; }
+        public override int Id { get; set; }
         public virtual Person Person { get; set; }
         public DateTime? HireDate { get; set; }
 

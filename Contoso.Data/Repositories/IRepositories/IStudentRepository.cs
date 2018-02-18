@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Contoso.Data.Repositories {
 
-    interface IStudentRepository : IRepository<Student> {
+    public interface IStudentRepository : IRepository<Student> {
 
 
     }

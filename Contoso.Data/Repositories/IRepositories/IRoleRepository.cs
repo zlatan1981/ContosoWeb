@@ -6,6 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Contoso.Data.Repositories.IRepositories {
-    interface IRoleRepository : IRepository<Role> {
+    public interface IRoleRepository : IRepository<Role> {
     }
 }

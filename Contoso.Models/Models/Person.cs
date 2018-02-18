@@ -45,5 +45,10 @@ namespace Contoso.Model {
         public virtual Student Student { get; set; }
         public virtual Instructor Instructor { get; set; }
 
+        public Person() {
+            CreatedAt = DateTime.Now;
+        }
+
+
     }
 }

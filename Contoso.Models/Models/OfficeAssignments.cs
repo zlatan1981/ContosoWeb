@@ -17,5 +17,9 @@ namespace Contoso.Model {
         [MaxLength(50)]
         public string Location { get; set; }
 
+        public OfficeAssignments() {
+            CreatedAt = DateTime.Now;
+        }
+
     }
 }

@@ -6,14 +6,14 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Contoso.Data.Repositories {
-    interface IRepository<T> where T : class {
+    public interface IRepository<T> where T : class {
 
         T Get(int id);
         IEnumerable<T> GetAll();
         IEnumerable<T> Find(Expression<Func<T, bool>> predicate);
         T SingleOrDefault(Expression<Func<T, bool>> predicate);
-
-        void Add(T entity);
+        // add the entity and return the id of this new added entity
+        int Add(T entity);
         void AddRange(IEnumerable<T> Entities);
 
         void Remove(T Entity);

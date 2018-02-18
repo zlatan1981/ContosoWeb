@@ -18,6 +18,10 @@ namespace Contoso.Model {
         public string Description { get; set; }
         public virtual ICollection<Person> Persons { get; set; }
 
+        public Role() {
+            CreatedAt = DateTime.Now;
+        }
+
 
     }
 }

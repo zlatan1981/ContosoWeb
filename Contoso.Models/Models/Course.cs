@@ -19,6 +19,9 @@ namespace Contoso.Model {
         public int DepartmentId { get; set; }
         public Department Department { get; set; }
 
+        public Course() {
+            CreatedAt = DateTime.Now;
+        }
 
         public virtual ICollection<Instructor> Instructors { get; set; }
         public virtual ICollection<Enrollment> Enrollments { get; set; }

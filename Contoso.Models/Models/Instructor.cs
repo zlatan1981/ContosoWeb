@@ -20,5 +20,9 @@ namespace Contoso.Model {
         public virtual ICollection<Course> Courses { get; set; }
         public virtual OfficeAssignments OfficeAssignments { get; set; }
 
+        public Instructor() {
+            CreatedAt = DateTime.Now;
+        }
+
     }
 }

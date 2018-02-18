@@ -23,5 +23,10 @@ namespace Contoso.Model {
         public Instructor Instructor { get; set; }
         public ICollection<Course> Courses { get; set; }
 
+
+        public Department() {
+            CreatedAt = DateTime.Now;
+        }
+
     }
 }

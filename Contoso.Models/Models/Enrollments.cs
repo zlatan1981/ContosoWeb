@@ -20,5 +20,9 @@ namespace Contoso.Model {
         public Student Student { get; set; }
         public double? Grade { get; set; }
 
+        public Enrollment() {
+            CreatedAt = DateTime.Now;
+        }
+
     }
 }

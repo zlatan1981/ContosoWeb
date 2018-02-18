@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Contoso.Data.Repositories.IRepositories {
 
-    interface IInstructorRepository : IRepository<Instructor> {
+    public interface IInstructorRepository : IRepository<Instructor> {
 
 
     }

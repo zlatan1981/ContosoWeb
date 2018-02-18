@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Contoso.Data.Repositories.IRepositories {
-    interface IDepartmentRepository : IRepository<Department> {
+    public interface IDepartmentRepository : IRepository<Department> {
 
     }
 }

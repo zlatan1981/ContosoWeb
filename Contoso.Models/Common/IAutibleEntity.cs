@@ -8,6 +8,7 @@ namespace Contoso.Models.Common {
 
     interface IAutibleEntity {
 
+        int Id { get; set; }
         DateTime CreatedAt { get; set; }
         string CreatedBy { get; set; }
         DateTime? UpdatedAt { get; set; }

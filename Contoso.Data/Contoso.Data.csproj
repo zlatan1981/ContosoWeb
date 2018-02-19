@@ -72,6 +72,14 @@
     <Compile Include="Migrations\201802190257394_addGradeEnumToEnrollmentTbl.Designer.cs">
       <DependentUpon>201802190257394_addGradeEnumToEnrollmentTbl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802191758581_RenameRolePersonTbl.cs" />
+    <Compile Include="Migrations\201802191758581_RenameRolePersonTbl.Designer.cs">
+      <DependentUpon>201802191758581_RenameRolePersonTbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201802191808479_blabla.cs" />
+    <Compile Include="Migrations\201802191808479_blabla.Designer.cs">
+      <DependentUpon>201802191808479_blabla.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CourseRepository.cs" />
@@ -118,6 +126,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802190257394_addGradeEnumToEnrollmentTbl.resx">
       <DependentUpon>201802190257394_addGradeEnumToEnrollmentTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802191758581_RenameRolePersonTbl.resx">
+      <DependentUpon>201802191758581_RenameRolePersonTbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802191808479_blabla.resx">
+      <DependentUpon>201802191808479_blabla.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

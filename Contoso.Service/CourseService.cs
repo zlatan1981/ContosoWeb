@@ -7,6 +7,7 @@ using Contoso.Model;
 using Contoso.Data.Repositories;
 using Contoso.Data.Repositories.IRepositories;
 using Contoso.Data;
+using System.Transactions;
 
 namespace Contoso.Service {
     public class CourseService : ICourseService {
@@ -22,9 +23,12 @@ namespace Contoso.Service {
 
 
         public int AddCourse(Course course) {
-            int CId = Courses.Add(course);
-            Complete();
-            return CId;
+            using (TransactionScope tran = new TransactionScope()) {
+                int CId = Courses.Add(course);
+                Complete();
+                tran.Complete();
+                return CId;
+            }
 
         }
 

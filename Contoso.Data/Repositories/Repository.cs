@@ -22,7 +22,10 @@ namespace Contoso.Data.Repositories {
 
         // add the entity and return the entity id
         public virtual int Add(T entity) {
-            return Table.Add(entity).Id;
+            // Console.WriteLine("Called");
+            Table.Add(entity);
+            SaveChanges(); // need savechanges to get the entity.Id
+            return entity.Id;// without the savechanges(), this will always be 0, which is not the key Id in Database
         }
 
         public virtual void AddRange(IEnumerable<T> Entities) {

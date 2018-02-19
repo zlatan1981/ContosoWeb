@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using Contoso.Data;
 using Contoso.Data.Repositories;
 using Contoso.Data.Repositories.IRepositories;
@@ -24,12 +25,16 @@ namespace Contoso.Service {
         }
 
         public int AddInstructor(Person person) {
-            int Pid = Persons.Add(person);
-            Instructors.Add(new Instructor() {
-                Id = Pid
-            });
-            Complete();
-            return Pid;
+
+            using (TransactionScope tran = new TransactionScope()) {
+                int Pid = Persons.Add(person);
+                Instructors.Add(new Instructor() {
+                    Id = Pid
+                });
+                Complete();
+                tran.Complete();
+                return Pid;
+            }
 
         }
 

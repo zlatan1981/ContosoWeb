@@ -7,6 +7,7 @@ using Contoso.Data.Repositories.IRepositories;
 using Contoso.Data;
 using Contoso.Model;
 using Contoso.Data.Repositories;
+using System.Transactions;
 
 namespace Contoso.Service {
     public class DepartmentService : IDepartmentService {
@@ -21,9 +22,13 @@ namespace Contoso.Service {
 
 
         public int AddDepartment(Department dept) {
-            int DId = Departments.Add(dept);
-            Complete();
-            return DId;
+            using (TransactionScope tran = new TransactionScope()) {
+                int DId = Departments.Add(dept);
+                Complete();
+                tran.Complete();
+                return DId;
+            }
+
         }
 
         public List<Department> GetAllDepartments() {

@@ -14,3 +14,4 @@ E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\EntityFramework.SqlServer.xml
 E:\antra\code\ContosoWeb\Contoso.Service\obj\Debug\Contoso.Service.csproj.CoreCompileInputs.cache
 E:\antra\code\ContosoWeb\Contoso.Service\obj\Debug\Contoso.Service.exe
 E:\antra\code\ContosoWeb\Contoso.Service\obj\Debug\Contoso.Service.pdb
+E:\antra\code\ContosoWeb\Contoso.Service\obj\Debug\Contoso.Service.csprojResolveAssemblyReference.cache

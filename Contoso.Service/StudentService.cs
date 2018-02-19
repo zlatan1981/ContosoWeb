@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace Contoso.Service {
     public class StudentService : IStudentService {
@@ -24,12 +25,16 @@ namespace Contoso.Service {
         }
 
         public int AddStudent(Person person) {
-            int Pid = Persons.Add(person);
-            Students.Add(new Student() {
-                Id = Pid
-            });
-            Complete();
-            return Pid;
+
+            using (TransactionScope tran = new TransactionScope()) {
+                int Pid = Persons.Add(person);
+                Students.Add(new Student() {
+                    Id = Pid
+                });
+                Complete();
+                tran.Complete();
+                return Pid;
+            }
 
         }
 

@@ -7,6 +7,7 @@ using Contoso.Model;
 using Contoso.Data.Repositories;
 using Contoso.Data.Repositories.IRepositories;
 using Contoso.Data;
+using System.Transactions;
 
 namespace Contoso.Service {
     public class RoleService : IRoleService {
@@ -20,10 +21,12 @@ namespace Contoso.Service {
         }
         // add role and return Id
         public int AddRole(Role r) {
-            int RId = Roles.Add(r);
-            Complete();
-            return RId;
-
+            using (TransactionScope tran = new TransactionScope()) {
+                int RId = Roles.Add(r);
+                Complete();
+                tran.Complete();
+                return RId;
+            }
         }
 
         public List<Role> GetAllRoles() {

@@ -23,5 +23,17 @@ namespace Contoso.Data {
         public DbSet<Role> Roles { get; set; }
         public DbSet<Enrollment> Enrollments { get; set; }
 
+        protected override void OnModelCreating(DbModelBuilder modelBuilder) {
+            modelBuilder.Entity<Person>().HasMany(p => p.Roles)
+                .WithMany(r => r.Persons).Map(
+                m => {
+                    m.MapLeftKey("PersonId");
+                    m.MapRightKey("RoleId");
+                    m.ToTable("PersonRoles");
+                });
+        }
+
+
+
     }
 }

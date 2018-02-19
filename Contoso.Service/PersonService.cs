@@ -7,6 +7,7 @@ using Contoso.Model;
 using Contoso.Data.Repositories;
 using Contoso.Data.Repositories.IRepositories;
 using Contoso.Data;
+using System.Transactions;
 
 namespace Contoso.Service {
     public class PersonService : IPersonService {
@@ -28,6 +29,17 @@ namespace Contoso.Service {
         }
 
 
+        public int AddPerson(Person person) {
+            using (TransactionScope tran = new TransactionScope()) {
+                int PId = Persons.Add(person);
+                Complete();
+                tran.Complete();
+                return PId;
+            }
+
+
+        }
+
         public int AddPerson(Person person, List<string> roles) {
             int PId = Persons.Add(person);
             HashSet<string> rs = new HashSet<string>(roles);
@@ -35,6 +47,22 @@ namespace Contoso.Service {
             Complete();
             return PId;
         }
+
+        public int AddPerson(Person person, string rolename) {
+            using (TransactionScope tran = new TransactionScope()) {
+                int PId = Persons.Add(person);
+                var role = Roles.SingleOrDefault(r => r.RoleName == rolename);
+                if (role == null) return -1;
+                person.Roles.Add(role);
+                Complete();
+                tran.Complete();
+                return PId;
+            }
+
+
+        }
+
+
 
         public List<Person> GetPeopleByRole(int roleId) {
             return Persons.Find((p) => p.Roles.Any((r => r.Id == roleId))).ToList();
@@ -57,7 +85,9 @@ namespace Contoso.Service {
 
 
         int Complete();
+        int AddPerson(Person person);
         int AddPerson(Person person, List<string> roles);
+        int AddPerson(Person person, string rolename);
         List<Person> GetPeopleByRole(int roleId);
 
 

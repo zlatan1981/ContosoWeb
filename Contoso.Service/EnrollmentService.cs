@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
+
 
 namespace Contoso.Service {
 
@@ -27,20 +29,23 @@ namespace Contoso.Service {
         }
 
         public int AddEnrollment(int StuId, int CourId) {
-            Course c = Courses.Get(CourId);
-            Student s = Students.Get(StuId);
-            if (c == null || s == null) return -1;
-            Enrollment enroll = Enrollments.SingleOrDefault(e => (e.StudentId == StuId && e.CourseId == CourId));
-            if (enroll != null) return enroll.Id;
 
-            enroll = new Enrollment() {
-                StudentId = StuId,
-                CourseId = CourId
-            };
-            int EId = Enrollments.Add(enroll);
-            Complete();
-            return EId;
+            using (TransactionScope tran = new TransactionScope()) {
+                Course c = Courses.Get(CourId);
+                Student s = Students.Get(StuId);
+                if (c == null || s == null) return -1; // if the course or student doesn't exist, invalid
+                Enrollment enroll = Enrollments.SingleOrDefault(e => (e.StudentId == StuId && e.CourseId == CourId));
+                if (enroll != null) return enroll.Id; // already exist, return
 
+                enroll = new Enrollment() {
+                    StudentId = StuId,
+                    CourseId = CourId
+                };
+                int EId = Enrollments.Add(enroll);
+                Complete();
+                tran.Complete();
+                return EId;
+            }
         }
 
 

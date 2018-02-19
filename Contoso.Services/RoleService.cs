@@ -8,11 +8,11 @@ using Contoso.Data.Repositories;
 using Contoso.Data.Repositories.IRepositories;
 using Contoso.Data;
 
-namespace Contoso.Services {
+namespace Contoso.Service {
     public class RoleService : IRoleService {
 
         private readonly ContosoContext Context;
-        public IRoleRepository Roles { get; private set; }
+        private readonly IRoleRepository Roles;
 
         public RoleService(ContosoContext context) {
             Context = context;
@@ -20,7 +20,9 @@ namespace Contoso.Services {
         }
         // add role and return Id
         public int AddRole(Role r) {
-            return Roles.Add(r);
+            int RId = Roles.Add(r);
+            Complete();
+            return RId;
 
         }
 
@@ -41,7 +43,7 @@ namespace Contoso.Services {
 
     public interface IRoleService {
 
-        IRoleRepository Roles { get; }
+
         int AddRole(Role r);
         int Complete();
         List<Role> GetAllRoles();

@@ -17,3 +17,5 @@ E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.csproj.GenerateReso
 E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.RenameSomeClassToSingle.resources
 E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.AddAudibleEntityInherit.resources
 E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.AddAudibleENtityToModels.resources
+E:\antra\code\ContosoWeb\Contoso.Data\bin\Debug\Microsoft.VisualStudio.DebuggerVisualizers.dll
+E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.addGradeEnumToEnrollmentTbl.resources

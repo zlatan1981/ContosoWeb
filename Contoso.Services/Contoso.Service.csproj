@@ -49,6 +49,8 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="CourseService.cs" />
+    <Compile Include="DepartmentService.cs" />
+    <Compile Include="EnrollmentService.cs" />
     <Compile Include="InstructorService.cs" />
     <Compile Include="PersonService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

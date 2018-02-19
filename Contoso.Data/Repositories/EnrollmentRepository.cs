@@ -8,16 +8,14 @@ using System.Threading.Tasks;
 
 namespace Contoso.Data.Repositories {
 
-    public class StudentRepository : Repository<Student>, IStudentRepository {
+    public class EnrollmentRepository : Repository<Enrollment>, IEnrollmentRepository {
 
         // cast the Context property from the base Repository<T> into  a ContosoContext before using 
         public ContosoContext ContosoContext { get { return Context as ContosoContext; } }
 
-        public StudentRepository(ContosoContext _context) : base(_context) {
+        public EnrollmentRepository(ContosoContext _context) : base(_context) {
 
         }
-
-
 
 
     }

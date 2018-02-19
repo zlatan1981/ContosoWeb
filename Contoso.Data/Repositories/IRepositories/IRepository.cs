@@ -5,7 +5,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Contoso.Data.Repositories {
+namespace Contoso.Data.Repositories.IRepositories {
     public interface IRepository<T> where T : class {
 
         T Get(int id);
@@ -18,6 +18,9 @@ namespace Contoso.Data.Repositories {
 
         void Remove(T Entity);
         void RemoveRange(IEnumerable<T> Entities);
+        void SaveChanges();
+
+
 
 
 

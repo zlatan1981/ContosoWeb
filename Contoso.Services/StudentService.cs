@@ -8,12 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Contoso.Services {
+namespace Contoso.Service {
     public class StudentService : IStudentService {
 
         private readonly ContosoContext Context;
-        public IPersonRepository Persons { get; private set; }
-        public IStudentRepository Students { get; private set; }
+        private readonly IPersonRepository Persons;
+        private readonly IStudentRepository Students;
 
         public StudentService(ContosoContext context) {
 
@@ -28,6 +28,7 @@ namespace Contoso.Services {
             Students.Add(new Student() {
                 Id = Pid
             });
+            Complete();
             return Pid;
 
         }
@@ -45,6 +46,9 @@ namespace Contoso.Services {
         }
 
 
+        public List<Course> GetStudentCourses(int stuId) {
+            return Students.Get(stuId).Enrollments.Select(e => e.Course).ToList();
+        }
 
         public int Complete() {
             return Context.SaveChanges();
@@ -53,18 +57,20 @@ namespace Contoso.Services {
         public void Dispose() {
             Context.Dispose();
         }
+
+
     }
 
     public interface IStudentService {
 
-        IPersonRepository Persons { get; }
-        IStudentRepository Students { get; }
+
         // add student but take a person as input type return the stu Id
         int AddStudent(Person person);
 
         Student GetStudentById(int StuId);
         List<Student> GetAllStudents();
         List<Student> GetStudentsByCourse(int courseId);
+        List<Course> GetStudentCourses(int stuId);
 
         int Complete();
 

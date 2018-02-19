@@ -8,12 +8,12 @@ using Contoso.Data.Repositories;
 using Contoso.Data.Repositories.IRepositories;
 using Contoso.Model;
 
-namespace Contoso.Services {
+namespace Contoso.Service {
     public class InstructorService : IInstructorService {
 
         private readonly ContosoContext Context;
-        public IPersonRepository Persons { get; private set; }
-        public IInstructorRepository Instructors { get; private set; }
+        private readonly IPersonRepository Persons;
+        private readonly IInstructorRepository Instructors;
 
         public InstructorService(ContosoContext context) {
 
@@ -28,6 +28,7 @@ namespace Contoso.Services {
             Instructors.Add(new Instructor() {
                 Id = Pid
             });
+            Complete();
             return Pid;
 
         }
@@ -66,8 +67,6 @@ namespace Contoso.Services {
 
     public interface IInstructorService {
 
-        IPersonRepository Persons { get; }
-        IInstructorRepository Instructors { get; }
         // add Instructor but take a person as input type return the stu Id
         int AddInstructor(Person person);
 

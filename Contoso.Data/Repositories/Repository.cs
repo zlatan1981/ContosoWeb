@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Linq.Expressions;
 using Contoso.Models.Common;
+using Contoso.Data.Repositories.IRepositories;
 
 namespace Contoso.Data.Repositories {
 
@@ -51,5 +52,12 @@ namespace Contoso.Data.Repositories {
         public virtual T SingleOrDefault(Expression<Func<T, bool>> predicate) {
             return Table.SingleOrDefault(predicate);
         }
+
+        public void SaveChanges() {
+            Context.SaveChanges();
+        }
+
+
+
     }
 }

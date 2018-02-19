@@ -8,16 +8,18 @@ using Contoso.Data.Repositories;
 using Contoso.Data.Repositories.IRepositories;
 using Contoso.Data;
 
-namespace Contoso.Services {
+namespace Contoso.Service {
     public class PersonService : IPersonService {
 
         private readonly ContosoContext Context;
-        public IPersonRepository Persons { get; private set; }
+        private readonly IPersonRepository Persons;
+        private readonly IRoleRepository Roles;
 
         public PersonService(ContosoContext context) {
 
             Context = context;
             Persons = new PersonRepository(Context);
+            Roles = new RoleRepository(Context);
 
         }
 
@@ -26,17 +28,12 @@ namespace Contoso.Services {
         }
 
 
-        public int Complete() {
-            return Context.SaveChanges();
-        }
-
-        public void Dispose() {
-            Context.Dispose();
-        }
-
-
         public int AddPerson(Person person, List<string> roles) {
-            throw new NotImplementedException();
+            int PId = Persons.Add(person);
+            HashSet<string> rs = new HashSet<string>(roles);
+            Persons.Get(PId).Roles = Roles.Find(r => rs.Contains(r.RoleName)).ToList();
+            Complete();
+            return PId;
         }
 
         public List<Person> GetPeopleByRole(int roleId) {
@@ -46,11 +43,19 @@ namespace Contoso.Services {
         public void RemovePerson(int id) {
 
         }
+
+        public int Complete() {
+            return Context.SaveChanges();
+        }
+
+        public void Dispose() {
+            Context.Dispose();
+        }
     }
 
     public interface IPersonService {
 
-        IPersonRepository Persons { get; }
+
         int Complete();
         int AddPerson(Person person, List<string> roles);
         List<Person> GetPeopleByRole(int roleId);

@@ -8,10 +8,10 @@ using Contoso.Data.Repositories;
 using Contoso.Data.Repositories.IRepositories;
 using Contoso.Data;
 
-namespace Contoso.Services {
+namespace Contoso.Service {
     public class CourseService : ICourseService {
 
-        public ICourseRepository Courses { get; private set; }
+        private readonly ICourseRepository Courses;
         private readonly ContosoContext Context;
 
         public CourseService(ContosoContext context) {
@@ -22,7 +22,10 @@ namespace Contoso.Services {
 
 
         public int AddCourse(Course course) {
-            return Courses.Add(course);
+            int CId = Courses.Add(course);
+            Complete();
+            return CId;
+
         }
 
 
@@ -57,7 +60,7 @@ namespace Contoso.Services {
 
     public interface ICourseService {
 
-        ICourseRepository Courses { get; }
+
 
         int AddCourse(Course Course);
         List<Course> GetAllCourses();

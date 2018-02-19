@@ -18,11 +18,21 @@ namespace Contoso.Model {
         [ForeignKey("Student")]
         public int? StudentId { get; set; }
         public Student Student { get; set; }
-        public double? Grade { get; set; }
+        public Grade? Grade { get; set; }
 
         public Enrollment() {
             CreatedAt = DateTime.Now;
         }
 
+
+
+    }
+
+    public enum Grade {
+        A,
+        B,
+        C,
+        D,
+        F
     }
 }

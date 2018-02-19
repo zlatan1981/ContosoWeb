@@ -6,10 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Contoso.Data.Repositories.IRepositories {
-
-    public interface IStudentRepository : IRepository<Student> {
-
-
-
+    public interface IEnrollmentRepository : IRepository<Enrollment> {
     }
 }

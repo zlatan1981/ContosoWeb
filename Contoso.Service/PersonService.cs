@@ -47,7 +47,8 @@ namespace Contoso.Service {
             Complete();
             return PId;
         }
-
+        // create a new person instance and assign this person a role based on the rolename
+        // if the rolename is not valid, then no role is added.
         public int AddPerson(Person person, string rolename) {
             using (TransactionScope tran = new TransactionScope()) {
                 int PId = Persons.Add(person);
@@ -58,9 +59,8 @@ namespace Contoso.Service {
                 tran.Complete();
                 return PId;
             }
-
-
         }
+
 
 
 

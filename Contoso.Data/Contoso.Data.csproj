@@ -80,6 +80,10 @@
     <Compile Include="Migrations\201802191808479_blabla.Designer.cs">
       <DependentUpon>201802191808479_blabla.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802191941053_changeCourseDeptIdKeyToNullable.cs" />
+    <Compile Include="Migrations\201802191941053_changeCourseDeptIdKeyToNullable.Designer.cs">
+      <DependentUpon>201802191941053_changeCourseDeptIdKeyToNullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CourseRepository.cs" />
@@ -132,6 +136,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802191808479_blabla.resx">
       <DependentUpon>201802191808479_blabla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802191941053_changeCourseDeptIdKeyToNullable.resx">
+      <DependentUpon>201802191941053_changeCourseDeptIdKeyToNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

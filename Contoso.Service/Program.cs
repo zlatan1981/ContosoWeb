@@ -82,16 +82,69 @@ namespace Contoso.Service {
                 //     var roles = db.Roles.ToList();
                 //    var googlesde = db.Roles.Single(r => r.RoleName == "Google SDE");
 
-                PersonService.AddPerson(persons.Single(p => p.FirstName == "TaoTao"), "Google SDE");
+                //    PersonService.AddPerson(persons.Single(p => p.FirstName == "TaoTao"), "Google SDE");
 
 
+                //List<Department> depts = new List<Department>() {
+                //    new Department() {
+                //        Name="CSE",
+                //        Budget = 50000
+                //    },
+                //    new Department() {
+                //        Name="ECE",
+                //        Budget = 50000
+                //    },
+                //    new Department() {
+                //        Name="ME",
+                //        Budget = 50000
+                //    },
+                //    new Department() {
+                //        Name="CE",
+                //        Budget = 50000
+                //    }
+
+                //};
+
+                //DepartmentService.AddDepartments(depts);
+
+                var deps = db.Departments.ToList();
+                var cse = deps.SingleOrDefault(d => d.Name == "CSE");
+                var ece = deps.SingleOrDefault(d => d.Name == "ECE");
+
+                //List<Course> cours = new List<Course>() {
+                //    new Course() {
+                //        Name ="Database Principles",
+                //        Department = cse
+                //    },
+                //    new Course() {
+                //        Name ="Operating Systems",
+                //        Department = cse
+                //    },
+                //    new Course() {
+                //        Name ="Computer Networks",
+                //        Department = cse
+
+                //    },
+                //    new Course() {
+                //        Name ="Digital Design",
+                //        Department = ece
+
+                //    },
+                //    new Course() {
+
+                //        Name ="Enbedded Systems",
+                //        Department = ece
+                //    }
 
 
+                //};
+
+                //CourseService.AddCourses(cours);
 
                 //      db.SaveChanges();
 
 
-
+                EnrollmentService.AddEnrollment(1, 1);
 
 
 

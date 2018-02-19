@@ -21,3 +21,4 @@ E:\antra\code\ContosoWeb\Contoso.Data\bin\Debug\Microsoft.VisualStudio.DebuggerV
 E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.addGradeEnumToEnrollmentTbl.resources
 E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.RenameRolePersonTbl.resources
 E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.blabla.resources
+E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.changeCourseDeptIdKeyToNullable.resources

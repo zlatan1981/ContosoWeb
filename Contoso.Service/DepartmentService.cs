@@ -31,6 +31,15 @@ namespace Contoso.Service {
 
         }
 
+        public void AddDepartments(IEnumerable<Department> depts) {
+            using (TransactionScope tran = new TransactionScope()) {
+                Departments.AddRange(depts);
+                Complete();
+                tran.Complete();
+            }
+
+        }
+
         public List<Department> GetAllDepartments() {
             return (List<Department>)Departments.GetAll(); ;
         }
@@ -58,6 +67,7 @@ namespace Contoso.Service {
     public interface IDepartmentService {
 
         int AddDepartment(Department dept);
+        void AddDepartments(IEnumerable<Department> depts);
         List<Department> GetAllDepartments();
         List<Department> GetAllDepartmentsIncludeCourses();
         Department GetDepartmentById(int deptId);

@@ -38,8 +38,19 @@ namespace Contoso.Service {
 
         }
 
-        public Instructor GetInstructorById(int StuId) {
-            return Instructors.Get(StuId);
+        // add a course with courId to the course list of the instructor with InId
+        public int AddCourseToInstructor(int InId, int courId) {
+            using (TransactionScope tran = new TransactionScope()) {
+
+
+
+            }
+            return 0;
+        }
+
+
+        public Instructor GetInstructorById(int InstructorId) {
+            return Instructors.Get(InstructorId);
         }
 
         public List<Instructor> GetAllInstructors() {
@@ -74,12 +85,14 @@ namespace Contoso.Service {
 
         // add Instructor but take a person as input type return the stu Id
         int AddInstructor(Person person);
+        int AddCourseToInstructor(int InstructorId, int CourseId);
 
         Instructor GetInstructorById(int StuId);
         List<Instructor> GetAllInstructors();
         List<Instructor> GetInstructorsByOffice(string location);
         List<Instructor> GetInstructorsByCourse(int courseId);
         List<Course> GetInstructorCourses(int instructorId);
+
 
         int Complete();
 

@@ -30,6 +30,7 @@ namespace Contoso.Data.Repositories {
 
         public virtual void AddRange(IEnumerable<T> Entities) {
             Table.AddRange(Entities);
+            SaveChanges();
         }
 
         public virtual IEnumerable<T> Find(Expression<Func<T, bool>> predicate) {

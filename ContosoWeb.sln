@@ -7,13 +7,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoWeb", "ContosoWeb\Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoWeb.Tests", "ContosoWeb.Tests\ContosoWeb.Tests.csproj", "{2EC3DCA0-F82B-47CD-A47E-15ECB237A57F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Service", "Contoso.Services\Contoso.Service.csproj", "{6C39E656-0968-4ADC-8394-BAF9958DFF8E}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Data", "Contoso.Data\Contoso.Data.csproj", "{C282D588-3F05-4BA0-B4F8-390A58393022}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Model", "Contoso.Models\Contoso.Model.csproj", "{D5F2E713-53CF-4AA2-8D2B-F18E2626FA64}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Utility", "Contoso.Utility\Contoso.Utility.csproj", "{1DA77844-0DFA-45F0-8383-6D767C007CE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contoso.Service", "Contoso.Service\Contoso.Service.csproj", "{3AADA3B2-6089-49B1-96EB-3718EA84C871}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,6 @@ Global
 		{2EC3DCA0-F82B-47CD-A47E-15ECB237A57F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EC3DCA0-F82B-47CD-A47E-15ECB237A57F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EC3DCA0-F82B-47CD-A47E-15ECB237A57F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6C39E656-0968-4ADC-8394-BAF9958DFF8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6C39E656-0968-4ADC-8394-BAF9958DFF8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6C39E656-0968-4ADC-8394-BAF9958DFF8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6C39E656-0968-4ADC-8394-BAF9958DFF8E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C282D588-3F05-4BA0-B4F8-390A58393022}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C282D588-3F05-4BA0-B4F8-390A58393022}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C282D588-3F05-4BA0-B4F8-390A58393022}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{1DA77844-0DFA-45F0-8383-6D767C007CE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DA77844-0DFA-45F0-8383-6D767C007CE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DA77844-0DFA-45F0-8383-6D767C007CE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AADA3B2-6089-49B1-96EB-3718EA84C871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AADA3B2-6089-49B1-96EB-3718EA84C871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AADA3B2-6089-49B1-96EB-3718EA84C871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AADA3B2-6089-49B1-96EB-3718EA84C871}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

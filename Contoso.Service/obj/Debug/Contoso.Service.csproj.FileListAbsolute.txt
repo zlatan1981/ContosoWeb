@@ -1,0 +1,16 @@
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\Contoso.Service.exe.config
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\Contoso.Service.exe
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\Contoso.Service.pdb
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\Contoso.Data.dll
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\Contoso.Models.dll
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\EntityFramework.dll
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\EntityFramework.SqlServer.dll
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\Contoso.Data.pdb
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\Contoso.Data.dll.config
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\Contoso.Models.pdb
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\Contoso.Models.dll.config
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\EntityFramework.xml
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\EntityFramework.SqlServer.xml
+E:\antra\code\ContosoWeb\Contoso.Service\obj\Debug\Contoso.Service.csproj.CoreCompileInputs.cache
+E:\antra\code\ContosoWeb\Contoso.Service\obj\Debug\Contoso.Service.exe
+E:\antra\code\ContosoWeb\Contoso.Service\obj\Debug\Contoso.Service.pdb

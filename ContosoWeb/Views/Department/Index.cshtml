@@ -3,7 +3,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+
 
 <table class="table">
 
@@ -16,7 +16,9 @@
     @foreach (var dep in Model) {
     <tr>
         <td> @dep.Id</td>
-        <td> @dep.Name</td>
+        <td>
+            @Html.ActionLink( dep.Name, "Details", "Department", new {Id = dep.Id}, null)
+        </td>
         <td> @dep.Budget</td>
     </tr>
     }

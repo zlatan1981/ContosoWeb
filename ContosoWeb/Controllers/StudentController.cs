@@ -1,42 +1,37 @@
-﻿using System;
+﻿using Contoso.Data;
+using Contoso.Service;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Contoso.Data;
-using Contoso.Model;
-using Contoso.Service;
-
-
 
 namespace ContosoWeb.Controllers {
-    public class DepartmentController : Controller {
-        // GET: Department
-        ContosoContext Context = new ContosoContext();
-        private IDepartmentService _departmentService;
+    public class StudentController : Controller {
+        //ContosoContext Context = new ContosoContext();
+        private IStudentService _studentService;
 
-        public DepartmentController() {
-            _departmentService = new DepartmentService(Context);
+        public StudentController(IStudentService studentService) {
+            _studentService = studentService;
         }
+
+        // GET: Student
         public ActionResult Index() {
-            var depts = _departmentService.GetAllDepartments();
-
-            return View(depts);
+            var students = _studentService.GetAllStudents();
+            return View(students);
         }
 
-        // GET: Department/Details/5
+        // GET: Student/Details/5
         public ActionResult Details(int id) {
-            var dept = _departmentService.GetDepartmentByIdIncludeCourses(id);
-
-            return View(dept);
+            return View();
         }
 
-        // GET: Department/Create
+        // GET: Student/Create
         public ActionResult Create() {
             return View();
         }
 
-        // POST: Department/Create
+        // POST: Student/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection) {
             try {
@@ -49,12 +44,12 @@ namespace ContosoWeb.Controllers {
             }
         }
 
-        // GET: Department/Edit/5
+        // GET: Student/Edit/5
         public ActionResult Edit(int id) {
             return View();
         }
 
-        // POST: Department/Edit/5
+        // POST: Student/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection) {
             try {
@@ -67,12 +62,12 @@ namespace ContosoWeb.Controllers {
             }
         }
 
-        // GET: Department/Delete/5
+        // GET: Student/Delete/5
         public ActionResult Delete(int id) {
             return View();
         }
 
-        // POST: Department/Delete/5
+        // POST: Student/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection) {
             try {

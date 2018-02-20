@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Contoso.Data.Repositories.IRepositories {
     public interface IDepartmentRepository : IRepository<Department> {
+        Department GetDepartmentByIdIncludeCourses(int deptId);
 
     }
 }

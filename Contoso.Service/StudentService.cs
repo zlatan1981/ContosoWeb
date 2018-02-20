@@ -12,15 +12,15 @@ using System.Transactions;
 namespace Contoso.Service {
     public class StudentService : IStudentService {
 
-        private readonly ContosoContext Context;
+        //   private readonly ContosoContext Context;
         private readonly IPersonRepository Persons;
         private readonly IStudentRepository Students;
 
-        public StudentService(ContosoContext context) {
+        public StudentService(IPersonRepository _persons, IStudentRepository _students) {
 
-            Context = context;
-            Persons = new PersonRepository(Context);
-            Students = new StudentRepository(Context);
+            //   Context = context;
+            Persons = _persons;
+            Students = _students;
 
         }
 
@@ -59,13 +59,13 @@ namespace Contoso.Service {
             Students.Update(student); ///////???? what about person??? 
         }
 
-        public int Complete() {
-            return Context.SaveChanges();
-        }
+        //public int Complete() {
+        //    return Context.SaveChanges();
+        //}
 
-        public void Dispose() {
-            Context.Dispose();
-        }
+        //public void Dispose() {
+        //    Context.Dispose();
+        //}
 
 
     }
@@ -82,7 +82,7 @@ namespace Contoso.Service {
         List<Course> GetStudentCourses(int stuId);
         void UpdateStudent(Student student);
 
-        int Complete();
+        //int Complete();
 
 
     }

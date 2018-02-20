@@ -2,6 +2,7 @@
 using Contoso.Model;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +17,8 @@ namespace Contoso.Data.Repositories {
 
         }
 
-
+        public Department GetDepartmentByIdIncludeCourses(int deptId) {
+            return ContosoContext.Departments.Where(d => d.Id == deptId).Include(d => d.Courses).FirstOrDefault(); ;
+        }
     }
 }

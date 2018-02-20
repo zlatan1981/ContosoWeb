@@ -12,7 +12,7 @@ namespace Contoso.Model {
     [Table("Courses")]
     public class Course : AudibleEntity {
 
-
+        [MaxLength(70)]
         public string Name { get; set; }
 
         public int Credits { get; set; }

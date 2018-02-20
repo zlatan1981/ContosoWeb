@@ -74,7 +74,9 @@ namespace Contoso.Service {
             Context.Dispose();
         }
 
-
+        public Course GetCourseIdIncludeInstructorandStudents(int courseId) {
+            return Courses.GetCourseIdIncludeInstructorandStudents(courseId);
+        }
     }
 
     public interface ICourseService {
@@ -85,8 +87,10 @@ namespace Contoso.Service {
         int AddOrUpdateCourse(Course course);
         void AddCourses(IEnumerable<Course> courses);
         List<Course> GetAllCourses();
+
         void UpdateCourse(Course Course);
         Course GetCourseById(int courseId);
+        Course GetCourseIdIncludeInstructorandStudents(int courseId);
         List<Course> GetCoursesbyInstructor(int instructorId);
         List<Course> GetCoursebyDept(int deptId);
         List<Instructor> GetCourseInstructors(int courseId);

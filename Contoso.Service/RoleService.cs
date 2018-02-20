@@ -19,6 +19,8 @@ namespace Contoso.Service {
             Context = context;
             Roles = new RoleRepository(Context);
         }
+
+
         // add role and return Id
         public int AddOrUpdateRole(Role r) {
             using (TransactionScope tran = new TransactionScope()) {
@@ -27,6 +29,10 @@ namespace Contoso.Service {
                 tran.Complete();
                 return r.Id;
             }
+        }
+
+        public Role GetRoleById(int id) {
+            return Roles.Get(id);
         }
 
         public List<Role> GetAllRoles() {
@@ -53,6 +59,7 @@ namespace Contoso.Service {
 
 
         int AddOrUpdateRole(Role r);
+        Role GetRoleById(int Id);
         int Complete();
         List<Role> GetAllRoles();
         //void UpdateRole(Role r);

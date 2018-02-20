@@ -51,3 +51,8 @@ E:\antra\code\ContosoWeb\ContosoWeb\bin\Contoso.Models.dll.config
 E:\antra\code\ContosoWeb\ContosoWeb\bin\Contoso.Service.pdb
 E:\antra\code\ContosoWeb\ContosoWeb\bin\Contoso.Service.exe.config
 E:\antra\code\ContosoWeb\ContosoWeb\bin\EntityFramework.xml
+E:\antra\code\ContosoWeb\ContosoWeb\bin\Unity.Abstractions.dll
+E:\antra\code\ContosoWeb\ContosoWeb\bin\Unity.Container.dll
+E:\antra\code\ContosoWeb\ContosoWeb\bin\Unity.Mvc.dll
+E:\antra\code\ContosoWeb\ContosoWeb\bin\WebActivatorEx.dll
+E:\antra\code\ContosoWeb\ContosoWeb\bin\Unity.Mvc.xml

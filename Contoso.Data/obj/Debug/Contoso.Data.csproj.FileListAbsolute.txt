@@ -22,3 +22,4 @@ E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.addGrade
 E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.RenameRolePersonTbl.resources
 E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.blabla.resources
 E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.changeCourseDeptIdKeyToNullable.resources
+E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.ChangeCourseNameMaxLength.resources

@@ -1,0 +1,29 @@
+﻿@model Contoso.Model.Course
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Model.Name</h2>
+
+<h4>Credit: @Model.Credits</h4>
+
+<h4>Department: @Model.Department.Name</h4>
+
+<h4>Instructors:</h4>
+<ul>
+    @foreach (var ins in Model.Instructors) {
+        <li>@ins.Person.FirstName + " " +@ins.Person.LastName</li>
+    }
+</ul>
+
+
+
+
+<h4>Students Enrolled:</h4>
+<ul>
+    @foreach (var enroll in Model.Enrollments) {
+        <li>@enroll.Student.Person.FirstName   @enroll.Student.Person.LastName</li>
+    }
+</ul>
+
+

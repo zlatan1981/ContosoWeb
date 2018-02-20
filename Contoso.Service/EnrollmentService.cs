@@ -42,7 +42,7 @@ namespace Contoso.Service {
                     CourseId = CourId
                 };
                 int EId = Enrollments.Add(enroll);
-                Complete();
+                //    Complete();
                 tran.Complete();
                 return EId;
             }
@@ -65,9 +65,14 @@ namespace Contoso.Service {
             return Enrollments.Find(e => e.StudentId == stuId).ToList();
         }
 
+        public void UpdateEnrollment(Enrollment Enrollment) {
+            Enrollments.Update(Enrollment);
+        }
+
         public int Complete() {
             return Context.SaveChanges();
         }
+
 
         public void Dispose() {
             Context.Dispose();
@@ -82,6 +87,7 @@ namespace Contoso.Service {
         List<Enrollment> GetAllEnrollments();
         List<Enrollment> GetEnrollmentByCourse(int courseId);
         List<Enrollment> GetEnrollmentByStudent(int stuId);
+        void UpdateEnrollment(Enrollment Enrollment);
 
         int Complete();
 

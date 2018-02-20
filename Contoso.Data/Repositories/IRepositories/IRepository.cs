@@ -15,7 +15,8 @@ namespace Contoso.Data.Repositories.IRepositories {
         // add the entity and return the id of this new added entity
         int Add(T entity);
         void AddRange(IEnumerable<T> Entities);
-
+        void Update(T entity);
+        void AddOrUpdate(T entity);
         void Remove(T Entity);
         void RemoveRange(IEnumerable<T> Entities);
         void SaveChanges();

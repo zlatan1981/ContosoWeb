@@ -35,14 +35,18 @@ namespace Contoso.Service {
                 //Console.WriteLine(studentId);
 
 
-                //var p1 = new Person() {
+                var p1 = new Person() {
 
-                //    FirstName = "TaoTao",
-                //    LastName = "Wang",
-                //    Email = "yuwang5763@gmail.com",
-                //    Phone = "512-8503426",
-                //    City = "Sterling"
-                //};
+                    FirstName = "TaoTao",
+                    LastName = "Wang",
+                    Email = "yuwang5763@gmail.com",
+                    Phone = "512-8503426",
+                    City = "Sterling"
+                };
+
+                PersonService.AddOrUpdatePerson(p1);
+                //  PersonService.AddOrUpdatePerson(p1);
+
 
                 //int pId = PersonService.AddPerson(p1);
 
@@ -144,9 +148,11 @@ namespace Contoso.Service {
                 //      db.SaveChanges();
 
 
-                EnrollmentService.AddEnrollment(1, 1);
+                //  EnrollmentService.AddEnrollment(1, 1);
 
-
+                //Person p = PersonService.GetPersonById(2);
+                //InstructorService.AddInstructor(p);
+                //InstructorService.AddInstructor(p);
 
 
 

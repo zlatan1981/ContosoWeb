@@ -20,18 +20,23 @@ namespace Contoso.Service {
             Roles = new RoleRepository(Context);
         }
         // add role and return Id
-        public int AddRole(Role r) {
+        public int AddOrUpdateRole(Role r) {
             using (TransactionScope tran = new TransactionScope()) {
-                int RId = Roles.Add(r);
-                Complete();
+                Roles.AddOrUpdate(r);
+                //    Complete();
                 tran.Complete();
-                return RId;
+                return r.Id;
             }
         }
 
         public List<Role> GetAllRoles() {
             return (List<Role>)Roles.GetAll();
         }
+
+        //public void UpdateRole(Role r) {
+        //    Roles.Update(r);
+
+        //}
 
 
         public int Complete() {
@@ -47,10 +52,10 @@ namespace Contoso.Service {
     public interface IRoleService {
 
 
-        int AddRole(Role r);
+        int AddOrUpdateRole(Role r);
         int Complete();
         List<Role> GetAllRoles();
-
+        //void UpdateRole(Role r);
 
 
     }

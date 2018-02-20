@@ -45,12 +45,20 @@ namespace Contoso.Data.Repositories {
             return Table.ToList();
         }
 
+        public void Update(T entity) {
+            Table.Attach(entity);
+            Context.Entry(entity).State = EntityState.Modified;
+            SaveChanges();
+        }
+
         public virtual void Remove(T Entity) {
             Table.Remove(Entity);
+            SaveChanges();
         }
 
         public virtual void RemoveRange(IEnumerable<T> Entities) {
             Table.RemoveRange(Entities);
+            SaveChanges();
         }
 
         public virtual T SingleOrDefault(Expression<Func<T, bool>> predicate) {
@@ -61,7 +69,13 @@ namespace Contoso.Data.Repositories {
             Context.SaveChanges();
         }
 
-
-
+        // refer to https://msdn.microsoft.com/en-us/data/jj592676
+        // Set EntityState value to tell checker to do attach or add....
+        public void AddOrUpdate(T entity) {
+            Context.Entry(entity).State = entity.Id == 0 ?
+                                   EntityState.Added :
+                                   EntityState.Modified;
+            Context.SaveChanges();
+        }
     }
 }

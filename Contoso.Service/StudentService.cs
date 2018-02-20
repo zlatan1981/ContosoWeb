@@ -27,13 +27,13 @@ namespace Contoso.Service {
         public int AddStudent(Person person) {
 
             using (TransactionScope tran = new TransactionScope()) {
-                int Pid = Persons.Add(person);
-                Students.Add(new Student() {
-                    Id = Pid
+                Persons.AddOrUpdate(person);
+                Students.AddOrUpdate(new Student() {
+                    Id = person.Id
                 });
-                Complete();
+                // Complete();
                 tran.Complete();
-                return Pid;
+                return person.Id;
             }
 
         }
@@ -53,6 +53,10 @@ namespace Contoso.Service {
 
         public List<Course> GetStudentCourses(int stuId) {
             return Students.Get(stuId).Enrollments.Select(e => e.Course).ToList();
+        }
+
+        public void UpdateStudent(Student student) {
+            Students.Update(student); ///////???? what about person??? 
         }
 
         public int Complete() {
@@ -76,6 +80,7 @@ namespace Contoso.Service {
         List<Student> GetAllStudents();
         List<Student> GetStudentsByCourse(int courseId);
         List<Course> GetStudentCourses(int stuId);
+        void UpdateStudent(Student student);
 
         int Complete();
 

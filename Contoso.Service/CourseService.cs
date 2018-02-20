@@ -22,12 +22,12 @@ namespace Contoso.Service {
         }
 
 
-        public int AddCourse(Course course) {
+        public int AddOrUpdateCourse(Course course) {
             using (TransactionScope tran = new TransactionScope()) {
-                int CId = Courses.Add(course);
-                Complete();
+                Courses.AddOrUpdate(course);
+                //   Complete();
                 tran.Complete();
-                return CId;
+                return course.Id;
             }
 
         }
@@ -35,12 +35,11 @@ namespace Contoso.Service {
         public void AddCourses(IEnumerable<Course> courses) {
             using (TransactionScope tran = new TransactionScope()) {
                 Courses.AddRange(courses);
-                Complete();
+                //Complete();
                 tran.Complete();
             }
-
-
         }
+
 
         public List<Course> GetAllCourses() {
             return Courses.GetAll().ToList();
@@ -62,6 +61,11 @@ namespace Contoso.Service {
             return Courses.Find(c => c.Instructors.Any(i => i.Id == instructorId)).ToList();
         }
 
+        public void UpdateCourse(Course course) {
+            Courses.Update(course);
+        }
+
+
         public int Complete() {
             return Context.SaveChanges();
         }
@@ -69,15 +73,19 @@ namespace Contoso.Service {
         public void Dispose() {
             Context.Dispose();
         }
+
+
     }
 
     public interface ICourseService {
 
 
 
-        int AddCourse(Course Course);
+        //        int AddCourse(Course Course);
+        int AddOrUpdateCourse(Course course);
         void AddCourses(IEnumerable<Course> courses);
         List<Course> GetAllCourses();
+        void UpdateCourse(Course Course);
         Course GetCourseById(int courseId);
         List<Course> GetCoursesbyInstructor(int instructorId);
         List<Course> GetCoursebyDept(int deptId);

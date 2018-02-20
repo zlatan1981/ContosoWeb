@@ -33,3 +33,14 @@ E:\antra\code\ContosoWeb\ContosoWeb.Tests\obj\Debug\ContosoWeb.Tests.csprojResol
 E:\antra\code\ContosoWeb\ContosoWeb.Tests\obj\Debug\ContosoWeb.Tests.csproj.CoreCompileInputs.cache
 E:\antra\code\ContosoWeb\ContosoWeb.Tests\obj\Debug\ContosoWeb.Tests.dll
 E:\antra\code\ContosoWeb\ContosoWeb.Tests\obj\Debug\ContosoWeb.Tests.pdb
+E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\Contoso.Service.exe
+E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\Contoso.Models.dll
+E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\Contoso.Data.dll
+E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\EntityFramework.dll
+E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\Contoso.Service.pdb
+E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\Contoso.Service.exe.config
+E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\Contoso.Models.pdb
+E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\Contoso.Models.dll.config
+E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\Contoso.Data.pdb
+E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\Contoso.Data.dll.config
+E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\EntityFramework.xml

@@ -40,3 +40,14 @@ E:\antra\code\ContosoWeb\ContosoWeb\obj\Debug\ContosoWeb.csprojResolveAssemblyRe
 E:\antra\code\ContosoWeb\ContosoWeb\obj\Debug\ContosoWeb.csproj.CoreCompileInputs.cache
 E:\antra\code\ContosoWeb\ContosoWeb\obj\Debug\ContosoWeb.dll
 E:\antra\code\ContosoWeb\ContosoWeb\obj\Debug\ContosoWeb.pdb
+E:\antra\code\ContosoWeb\ContosoWeb\bin\Contoso.Data.dll
+E:\antra\code\ContosoWeb\ContosoWeb\bin\Contoso.Models.dll
+E:\antra\code\ContosoWeb\ContosoWeb\bin\Contoso.Service.exe
+E:\antra\code\ContosoWeb\ContosoWeb\bin\EntityFramework.dll
+E:\antra\code\ContosoWeb\ContosoWeb\bin\Contoso.Data.pdb
+E:\antra\code\ContosoWeb\ContosoWeb\bin\Contoso.Data.dll.config
+E:\antra\code\ContosoWeb\ContosoWeb\bin\Contoso.Models.pdb
+E:\antra\code\ContosoWeb\ContosoWeb\bin\Contoso.Models.dll.config
+E:\antra\code\ContosoWeb\ContosoWeb\bin\Contoso.Service.pdb
+E:\antra\code\ContosoWeb\ContosoWeb\bin\Contoso.Service.exe.config
+E:\antra\code\ContosoWeb\ContosoWeb\bin\EntityFramework.xml

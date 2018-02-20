@@ -21,12 +21,12 @@ namespace Contoso.Service {
         }
 
 
-        public int AddDepartment(Department dept) {
+        public int AddOrUpdateDepartment(Department dept) {
             using (TransactionScope tran = new TransactionScope()) {
-                int DId = Departments.Add(dept);
-                Complete();
+                Departments.AddOrUpdate(dept);
+                //Complete();
                 tran.Complete();
-                return DId;
+                return dept.Id;
             }
 
         }
@@ -34,14 +34,14 @@ namespace Contoso.Service {
         public void AddDepartments(IEnumerable<Department> depts) {
             using (TransactionScope tran = new TransactionScope()) {
                 Departments.AddRange(depts);
-                Complete();
+                //   Complete();
                 tran.Complete();
             }
 
         }
 
         public List<Department> GetAllDepartments() {
-            return (List<Department>)Departments.GetAll(); ;
+            return (List<Department>)Departments.GetAll();
         }
 
         public List<Department> GetAllDepartmentsIncludeCourses() {
@@ -49,7 +49,11 @@ namespace Contoso.Service {
         }
 
         public Department GetDepartmentById(int deptId) {
-            throw new NotImplementedException();
+            return Departments.Get(deptId);
+        }
+
+        public void UpdateDepartment(Department dept) {
+            Departments.Update(dept);
         }
 
         public int Complete() {
@@ -66,8 +70,9 @@ namespace Contoso.Service {
 
     public interface IDepartmentService {
 
-        int AddDepartment(Department dept);
+        int AddOrUpdateDepartment(Department dept);
         void AddDepartments(IEnumerable<Department> depts);
+        void UpdateDepartment(Department dept);
         List<Department> GetAllDepartments();
         List<Department> GetAllDepartmentsIncludeCourses();
         Department GetDepartmentById(int deptId);

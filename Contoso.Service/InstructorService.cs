@@ -15,25 +15,31 @@ namespace Contoso.Service {
         private readonly ContosoContext Context;
         private readonly IPersonRepository Persons;
         private readonly IInstructorRepository Instructors;
+        private readonly ICourseRepository Courses;
 
         public InstructorService(ContosoContext context) {
 
             Context = context;
             Persons = new PersonRepository(Context);
             Instructors = new InstructorRepository(Context);
+            Courses = new CourseRepository(Context);
 
         }
 
         public int AddInstructor(Person person) {
 
             using (TransactionScope tran = new TransactionScope()) {
-                int Pid = Persons.Add(person);
-                Instructors.Add(new Instructor() {
-                    Id = Pid
+                Persons.AddOrUpdate(person); // this person is tracked and in context
+                // then we can add as instructor by setting the navigation property.
+                //person.Instructor = new Instructor() {
+                //    Id = person.Id
+                //};
+                Instructors.AddOrUpdate(new Instructor() {
+                    Id = person.Id
                 });
-                Complete();
+                //   Complete();
                 tran.Complete();
-                return Pid;
+                return person.Id;
             }
 
         }
@@ -42,10 +48,18 @@ namespace Contoso.Service {
         public int AddCourseToInstructor(int InId, int courId) {
             using (TransactionScope tran = new TransactionScope()) {
 
-
-
+                var ins = Instructors.Get(InId);
+                var course = Courses.Get(courId);
+                if (ins == null || course == null) {
+                    tran.Complete();
+                    return -1;
+                }
+                ins.Courses.Add(course);
+                //Complete();
+                tran.Complete();
+                return 0;
             }
-            return 0;
+
         }
 
 
@@ -68,6 +82,10 @@ namespace Contoso.Service {
 
         public List<Instructor> GetInstructorsByCourse(int courseId) {
             return Instructors.Find(i => i.Courses.Any(c => c.Id == courseId)).ToList();
+        }
+
+        public void UpdateInstructor(Instructor instructor) {
+            Instructors.Update(instructor);
         }
 
         public int Complete() {
@@ -93,6 +111,7 @@ namespace Contoso.Service {
         List<Instructor> GetInstructorsByCourse(int courseId);
         List<Course> GetInstructorCourses(int instructorId);
 
+        void UpdateInstructor(Instructor instructor);
 
         int Complete();
 

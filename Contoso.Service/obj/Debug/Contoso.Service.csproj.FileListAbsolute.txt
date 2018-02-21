@@ -15,3 +15,14 @@ E:\antra\code\ContosoWeb\Contoso.Service\obj\Debug\Contoso.Service.csproj.CoreCo
 E:\antra\code\ContosoWeb\Contoso.Service\obj\Debug\Contoso.Service.exe
 E:\antra\code\ContosoWeb\Contoso.Service\obj\Debug\Contoso.Service.pdb
 E:\antra\code\ContosoWeb\Contoso.Service\obj\Debug\Contoso.Service.csprojResolveAssemblyReference.cache
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\System.Web.Mvc.dll
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\System.Web.WebPages.dll
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\System.Web.WebPages.Razor.dll
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\System.Web.Razor.dll
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\System.Web.Mvc.xml
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\System.Web.WebPages.xml
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\System.Web.WebPages.Razor.xml
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\System.Web.Razor.xml
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\System.Web.WebPages.Deployment.xml

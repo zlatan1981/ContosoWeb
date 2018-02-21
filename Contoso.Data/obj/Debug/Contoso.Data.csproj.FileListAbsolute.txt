@@ -26,3 +26,14 @@ E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.ChangeCo
 E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.ChangePropertyFirstNameLastNameOrderinPersonTbl.resources
 E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.changeInstructorHireDateDisplayAttr.resources
 E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.AddRangeToCourseCredits.resources
+E:\antra\code\ContosoWeb\Contoso.Data\bin\Debug\System.Web.Mvc.dll
+E:\antra\code\ContosoWeb\Contoso.Data\bin\Debug\System.Web.WebPages.dll
+E:\antra\code\ContosoWeb\Contoso.Data\bin\Debug\System.Web.WebPages.Razor.dll
+E:\antra\code\ContosoWeb\Contoso.Data\bin\Debug\System.Web.Razor.dll
+E:\antra\code\ContosoWeb\Contoso.Data\bin\Debug\Microsoft.Web.Infrastructure.dll
+E:\antra\code\ContosoWeb\Contoso.Data\bin\Debug\System.Web.WebPages.Deployment.dll
+E:\antra\code\ContosoWeb\Contoso.Data\bin\Debug\System.Web.Mvc.xml
+E:\antra\code\ContosoWeb\Contoso.Data\bin\Debug\System.Web.WebPages.xml
+E:\antra\code\ContosoWeb\Contoso.Data\bin\Debug\System.Web.WebPages.Razor.xml
+E:\antra\code\ContosoWeb\Contoso.Data\bin\Debug\System.Web.Razor.xml
+E:\antra\code\ContosoWeb\Contoso.Data\bin\Debug\System.Web.WebPages.Deployment.xml

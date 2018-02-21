@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Contoso.Data;
 using Contoso.Model;
+using Contoso.Models.ViewModels;
 using Contoso.Service;
 
 
@@ -14,9 +15,10 @@ namespace ContosoWeb.Controllers {
         // GET: Department
         //  ContosoContext Context = new ContosoContext();
         private IDepartmentService _departmentService;
-
-        public DepartmentController(IDepartmentService departmentService) {
+        private IInstructorService _instructorService;
+        public DepartmentController(IDepartmentService departmentService, IInstructorService instructorService) {
             _departmentService = departmentService;
+            _instructorService = instructorService;
         }
         public ActionResult Index() {
             var depts = _departmentService.GetAllDepartments();
@@ -32,9 +34,22 @@ namespace ContosoWeb.Controllers {
         }
 
         // GET: Department/Create
+        //public ActionResult Create() {
+
+        //    return View();
+        //}
+
         public ActionResult Create() {
-            return View();
+            // prepare the instructorlist for view display
+            InstructorSelectList inslist = new InstructorSelectList() {
+                _instructors = _instructorService.GetAllInstructors()
+            };
+            DeptWithInsListViewModel depwithInsList = new DeptWithInsListViewModel() {
+                InsList = inslist
+            };
+            return View(depwithInsList);
         }
+
 
         // POST: Department/Create
         //[HttpPost]
@@ -55,22 +70,40 @@ namespace ContosoWeb.Controllers {
         //}
 
 
+        //[HttpPost]
+        //public ActionResult Create(Department dept) {
+        //    try {
+        //        // TODO: Add insert logic here
+        //        //Department dept = new Department() {
+        //        //    Name = DepartmentName,
+        //        //    Budget = Budget
+        //        //};
+
+        //        _departmentService.AddOrUpdateDepartment(dept);
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch {
+        //        return View();
+        //    }
+        //}
+
         [HttpPost]
-        public ActionResult Create(Department dept) {
+        public ActionResult Create(DeptWithInsListViewModel dept) {
             try {
                 // TODO: Add insert logic here
                 //Department dept = new Department() {
                 //    Name = DepartmentName,
                 //    Budget = Budget
                 //};
-
-                _departmentService.AddOrUpdateDepartment(dept);
+                dept.Department.InstrutorId = dept.InsList.SelectedInstructorId;
+                _departmentService.AddOrUpdateDepartment(dept.Department);
                 return RedirectToAction("Index");
             }
             catch {
                 return View();
             }
         }
+
 
 
         // GET: Department/Edit/5

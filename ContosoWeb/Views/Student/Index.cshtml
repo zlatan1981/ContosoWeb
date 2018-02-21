@@ -36,6 +36,10 @@
             @Html.DisplayNameFor(model => model.Person.LastName)
         </th>
 
+        <th>
+            @Html.DisplayNameFor(model => model.EnrollmentDate)
+        </th>
+
         @*<th>
             @Html.DisplayNameFor(model => model.Person.MiddleName)
         </th>
@@ -107,6 +111,10 @@
         <td>
             @Html.DisplayFor(modelItem => item.Person.LastName)
         </td>
+
+        <th>
+            @Html.DisplayFor(model => item.EnrollmentDate)
+        </th>
 
         @*<td>
             @Html.DisplayFor(modelItem => item.Person.MiddleName)

@@ -13,13 +13,14 @@ namespace Contoso.Model {
         [Key, ForeignKey("Person")]
         public override int Id { get; set; }
         public virtual Person Person { get; set; }
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? EnrollmentDate { get; set; }
 
         public virtual ICollection<Enrollment> Enrollments { get; set; }
 
         public Student() {
             CreatedAt = DateTime.Now;
-            EnrollmentDate = DateTime.Now;
+            //    EnrollmentDate = DateTime.Now;
         }
 
 

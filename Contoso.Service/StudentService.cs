@@ -2,6 +2,7 @@
 using Contoso.Data.Repositories;
 using Contoso.Data.Repositories.IRepositories;
 using Contoso.Model;
+using Contoso.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,6 +35,23 @@ namespace Contoso.Service {
                 // Complete();
                 tran.Complete();
                 return person.Id;
+            }
+
+        }
+
+        public int AddStudent(StudentPerson SPerson) {
+
+            using (TransactionScope tran = new TransactionScope()) {
+                Persons.Add(SPerson.Person); // this person is tracked and in context
+                // then we can add as Student by setting the navigation property.
+                //person.Student = new Student() {
+                //    Id = person.Id
+                //};
+                SPerson.Student.Id = SPerson.Person.Id;
+                Students.Add(SPerson.Student);
+                //   Complete();
+                tran.Complete();
+                return SPerson.Person.Id;
             }
 
         }
@@ -89,6 +107,7 @@ namespace Contoso.Service {
 
         // add student but take a person as input type return the stu Id
         int AddStudent(Person person);
+        int AddStudent(StudentPerson SPerson);
         int UpdateStudent(Person person);
         Student GetStudentById(int StuId);
         List<Student> GetAllStudents();

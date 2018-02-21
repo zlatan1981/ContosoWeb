@@ -1,5 +1,6 @@
 ﻿using Contoso.Data;
 using Contoso.Model;
+using Contoso.Models.ViewModels;
 using Contoso.Service;
 using System;
 using System.Collections.Generic;
@@ -46,9 +47,26 @@ namespace ContosoWeb.Controllers {
         //    }
         //}
 
-        // when creating a student, we actually passed in a person cuz of my implementation
+        //// when creating a student, we actually passed in a person cuz of my implementation
+        //[HttpPost]
+        //public ActionResult Create(Person person) {
+        //    try {
+        //        // TODO: Add insert logic here
+        //        //Department dept = new Department() {
+        //        //    Name = DepartmentName,
+        //        //    Budget = Budget
+        //        //};
+
+        //        _studentService.AddStudent(person);
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch {
+        //        return View();
+        //    }
+        //}
+
         [HttpPost]
-        public ActionResult Create(Person person) {
+        public ActionResult Create(StudentPerson SPerson) {
             try {
                 // TODO: Add insert logic here
                 //Department dept = new Department() {
@@ -56,7 +74,7 @@ namespace ContosoWeb.Controllers {
                 //    Budget = Budget
                 //};
 
-                _studentService.AddStudent(person);
+                _studentService.AddStudent(SPerson);
                 return RedirectToAction("Index");
             }
             catch {

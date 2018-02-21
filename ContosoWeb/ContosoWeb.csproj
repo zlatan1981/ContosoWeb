@@ -213,10 +213,11 @@
     <Content Include="Views\Department\Create.cshtml" />
     <Content Include="Views\Department\Index.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
-    <Content Include="Views\Student\Create.cshtml" />
+    <Content Include="Views\Student\Create1.cshtml" />
     <Content Include="Views\Instructor\Create1.cshtml" />
     <Content Include="Views\Instructor\Index.cshtml" />
     <Content Include="Views\Instructor\Create.cshtml" />
+    <Content Include="Views\Student\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

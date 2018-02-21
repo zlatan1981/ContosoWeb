@@ -8,6 +8,7 @@ using Contoso.Data;
 using Contoso.Data.Repositories;
 using Contoso.Data.Repositories.IRepositories;
 using Contoso.Model;
+using Contoso.Models.ViewModels;
 using ContosoWeb.ViewModels;
 
 namespace Contoso.Service {

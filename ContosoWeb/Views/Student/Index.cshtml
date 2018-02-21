@@ -23,17 +23,19 @@
         <th>
             @Html.DisplayNameFor(model => model.UpdatedBy)
         </th>*@
-        
-        
-        
-        
+
         <th>
-            @Html.DisplayNameFor(model => model.Person.LastName)
+            @Html.DisplayNameFor(model => model.Person.Id)
         </th>
+
         <th>
             @Html.DisplayNameFor(model => model.Person.FirstName)
         </th>
-        
+
+        <th>
+            @Html.DisplayNameFor(model => model.Person.LastName)
+        </th>
+
         @*<th>
             @Html.DisplayNameFor(model => model.Person.MiddleName)
         </th>
@@ -93,11 +95,17 @@
         <td>
             @Html.DisplayFor(modelItem => item.UpdatedBy)
         </td>*@
+
         <td>
-            @Html.DisplayFor(modelItem => item.Person.LastName)
+            @Html.DisplayFor(modelItem => item.Person.Id)
         </td>
+
         <td>
             @Html.DisplayFor(modelItem => item.Person.FirstName)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.Person.LastName)
         </td>
 
         @*<td>
@@ -143,9 +151,9 @@
             @Html.DisplayFor(modelItem => item.Person.DateofBirth)
         </td>*@
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
         </td>
     </tr>
 }

@@ -29,6 +29,25 @@ namespace Contoso.Service {
         public int AddInstructor(Person person) {
 
             using (TransactionScope tran = new TransactionScope()) {
+                Persons.Add(person); // this person is tracked and in context
+                // then we can add as instructor by setting the navigation property.
+                //person.Instructor = new Instructor() {
+                //    Id = person.Id
+                //};
+                Instructors.Add(new Instructor() {
+                    Id = person.Id
+                });
+                //   Complete();
+                tran.Complete();
+                return person.Id;
+            }
+
+        }
+
+
+        public int UpdateInstructor(Person person) {
+
+            using (TransactionScope tran = new TransactionScope()) {
                 Persons.AddOrUpdate(person); // this person is tracked and in context
                 // then we can add as instructor by setting the navigation property.
                 //person.Instructor = new Instructor() {
@@ -43,6 +62,7 @@ namespace Contoso.Service {
             }
 
         }
+
 
         // add a course with courId to the course list of the instructor with InId
         public int AddCourseToInstructor(int InId, int courId) {
@@ -103,6 +123,7 @@ namespace Contoso.Service {
 
         // add Instructor but take a person as input type return the stu Id
         int AddInstructor(Person person);
+        int UpdateInstructor(Person person);
         int AddCourseToInstructor(int InstructorId, int CourseId);
 
         Instructor GetInstructorById(int StuId);

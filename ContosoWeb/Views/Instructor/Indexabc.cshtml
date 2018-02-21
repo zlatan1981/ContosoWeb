@@ -1,0 +1,23 @@
+﻿@model List<Contoso.Model.Instructor>
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="table">
+
+    <tr>
+        <td>  Id  </td>
+        <td>   Name </td>
+
+    </tr>
+
+    @foreach (var ins in Model) {
+        <tr>
+            <td> @ins.Id</td>
+            <td>  @ins.Person.FirstName @ins.Person.LastName</td>
+
+        </tr>
+    }
+
+</table>
+

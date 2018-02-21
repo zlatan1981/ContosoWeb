@@ -11,11 +11,10 @@ namespace Contoso.Model {
     [Table("Person")]
     public class Person : AudibleEntity {
 
-
-        [Required, MaxLength(50)]
-        public string LastName { get; set; }
         [Required, MaxLength(50)]
         public string FirstName { get; set; }
+        [Required, MaxLength(50)]
+        public string LastName { get; set; }
         [MaxLength(50)]
         public string MiddleName { get; set; }
         [MaxLength(50)]

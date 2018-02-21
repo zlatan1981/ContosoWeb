@@ -27,6 +27,20 @@ namespace Contoso.Service {
         public int AddStudent(Person person) {
 
             using (TransactionScope tran = new TransactionScope()) {
+                Persons.Add(person);
+                Students.Add(new Student() {
+                    Id = person.Id
+                });
+                // Complete();
+                tran.Complete();
+                return person.Id;
+            }
+
+        }
+
+        public int UpdateStudent(Person person) {
+
+            using (TransactionScope tran = new TransactionScope()) {
                 Persons.AddOrUpdate(person);
                 Students.AddOrUpdate(new Student() {
                     Id = person.Id
@@ -75,7 +89,7 @@ namespace Contoso.Service {
 
         // add student but take a person as input type return the stu Id
         int AddStudent(Person person);
-
+        int UpdateStudent(Person person);
         Student GetStudentById(int StuId);
         List<Student> GetAllStudents();
         List<Student> GetStudentsByCourse(int courseId);

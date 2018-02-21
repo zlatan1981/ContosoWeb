@@ -1,4 +1,5 @@
 ﻿using Contoso.Data;
+using Contoso.Model;
 using Contoso.Service;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,7 @@ namespace ContosoWeb.Controllers {
         // GET: Student
         public ActionResult Index() {
             var students = _studentService.GetAllStudents();
+
             return View(students);
         }
 
@@ -32,17 +34,37 @@ namespace ContosoWeb.Controllers {
         }
 
         // POST: Student/Create
+        //[HttpPost]
+        //public ActionResult Create(FormCollection collection) {
+        //    try {
+        //        // TODO: Add insert logic here
+
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch {
+        //        return View();
+        //    }
+        //}
+
+        // when creating a student, we actually passed in a person cuz of my implementation
         [HttpPost]
-        public ActionResult Create(FormCollection collection) {
+        public ActionResult Create(Person person) {
             try {
                 // TODO: Add insert logic here
+                //Department dept = new Department() {
+                //    Name = DepartmentName,
+                //    Budget = Budget
+                //};
 
+                _studentService.AddStudent(person);
                 return RedirectToAction("Index");
             }
             catch {
                 return View();
             }
         }
+
+
 
         // GET: Student/Edit/5
         public ActionResult Edit(int id) {

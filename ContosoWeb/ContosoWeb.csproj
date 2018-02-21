@@ -208,11 +208,13 @@
     <Content Include="Views\Department\Details.cshtml" />
     <Content Include="Views\Course\Index.cshtml" />
     <Content Include="Views\Course\Details.cshtml" />
-    <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Student\Indexabc.cshtml" />
     <Content Include="Views\Instructor\Index.cshtml" />
     <Content Include="Views\Department\Createabc.cshtml" />
     <Content Include="Views\Department\Create.cshtml" />
     <Content Include="Views\Department\Index.cshtml" />
+    <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Student\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -12,11 +12,11 @@ using Contoso.Service;
 namespace ContosoWeb.Controllers {
     public class DepartmentController : Controller {
         // GET: Department
-        ContosoContext Context = new ContosoContext();
+        //  ContosoContext Context = new ContosoContext();
         private IDepartmentService _departmentService;
 
-        public DepartmentController() {
-            _departmentService = new DepartmentService(Context);
+        public DepartmentController(IDepartmentService departmentService) {
+            _departmentService = departmentService;
         }
         public ActionResult Index() {
             var depts = _departmentService.GetAllDepartments();
@@ -37,17 +37,41 @@ namespace ContosoWeb.Controllers {
         }
 
         // POST: Department/Create
+        //[HttpPost]
+        //public ActionResult Create(FormCollection collection) {
+        //    try {
+        //        // TODO: Add insert logic here
+        //        Department dept = new Department() {
+        //            Name = collection["DepartmentName"],
+        //            Budget = Convert.ToDecimal(collection["Budget"])
+        //        };
+
+        //        _departmentService.AddOrUpdateDepartment(dept);
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch {
+        //        return View();
+        //    }
+        //}
+
+
         [HttpPost]
-        public ActionResult Create(FormCollection collection) {
+        public ActionResult Create(Department dept) {
             try {
                 // TODO: Add insert logic here
+                //Department dept = new Department() {
+                //    Name = DepartmentName,
+                //    Budget = Budget
+                //};
 
+                _departmentService.AddOrUpdateDepartment(dept);
                 return RedirectToAction("Index");
             }
             catch {
                 return View();
             }
         }
+
 
         // GET: Department/Edit/5
         public ActionResult Edit(int id) {

@@ -12,12 +12,12 @@ using System.Transactions;
 namespace Contoso.Service {
     public class RoleService : IRoleService {
 
-        private readonly ContosoContext Context;
+        //private readonly ContosoContext Context;
         private readonly IRoleRepository Roles;
 
-        public RoleService(ContosoContext context) {
-            Context = context;
-            Roles = new RoleRepository(Context);
+        public RoleService(IRoleRepository roles) {
+            //  Context = context;
+            Roles = roles;
         }
 
 
@@ -45,13 +45,13 @@ namespace Contoso.Service {
         //}
 
 
-        public int Complete() {
-            return Context.SaveChanges();
-        }
+        //public int Complete() {
+        //    return Context.SaveChanges();
+        //}
 
-        public void Dispose() {
-            Context.Dispose();
-        }
+        //public void Dispose() {
+        //    Context.Dispose();
+        //}
     }
 
 
@@ -60,7 +60,7 @@ namespace Contoso.Service {
 
         int AddOrUpdateRole(Role r);
         Role GetRoleById(int Id);
-        int Complete();
+        //int Complete();
         List<Role> GetAllRoles();
         //void UpdateRole(Role r);
 

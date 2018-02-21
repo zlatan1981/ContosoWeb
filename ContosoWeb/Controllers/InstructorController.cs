@@ -1,5 +1,4 @@
-﻿using Contoso.Data;
-using Contoso.Service;
+﻿using Contoso.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,32 +6,33 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace ContosoWeb.Controllers {
-    public class CourseController : Controller {
+    public class InstructorController : Controller {
 
-        private ICourseService _courseService;
-        public CourseController(ICourseService courseService) {
-            _courseService = courseService;
+        //ContosoContext Context = new ContosoContext();
+        private IInstructorService _instructorService;
+
+        public InstructorController(IInstructorService instructorService) {
+            _instructorService = instructorService;
         }
 
-        // GET: Course
+        // GET: Instructor
         public ActionResult Index() {
-            var courses = _courseService.GetAllCourses();
-            return View(courses);
+            var instructors = _instructorService.GetAllInstructors();
+            return View(instructors);
+
         }
 
-        // GET: Course/Details/5
+        // GET: Instructor/Details/5
         public ActionResult Details(int id) {
-            var course = _courseService.GetCourseIdIncludeInstructorandStudents(id);
-
-            return View(course);
+            return View();
         }
 
-        // GET: Course/Create
+        // GET: Instructor/Create
         public ActionResult Create() {
             return View();
         }
 
-        // POST: Course/Create
+        // POST: Instructor/Create
         [HttpPost]
         public ActionResult Create(FormCollection collection) {
             try {
@@ -45,12 +45,12 @@ namespace ContosoWeb.Controllers {
             }
         }
 
-        // GET: Course/Edit/5
+        // GET: Instructor/Edit/5
         public ActionResult Edit(int id) {
             return View();
         }
 
-        // POST: Course/Edit/5
+        // POST: Instructor/Edit/5
         [HttpPost]
         public ActionResult Edit(int id, FormCollection collection) {
             try {
@@ -63,12 +63,12 @@ namespace ContosoWeb.Controllers {
             }
         }
 
-        // GET: Course/Delete/5
+        // GET: Instructor/Delete/5
         public ActionResult Delete(int id) {
             return View();
         }
 
-        // POST: Course/Delete/5
+        // POST: Instructor/Delete/5
         [HttpPost]
         public ActionResult Delete(int id, FormCollection collection) {
             try {

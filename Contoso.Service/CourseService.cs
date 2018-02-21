@@ -13,11 +13,11 @@ namespace Contoso.Service {
     public class CourseService : ICourseService {
 
         private readonly ICourseRepository Courses;
-        private readonly ContosoContext Context;
+        //  private readonly ContosoContext Context;
 
-        public CourseService(ContosoContext context) {
-            Context = context;
-            Courses = new CourseRepository(Context);
+        public CourseService(ICourseRepository courses) {
+            //  Context = context;
+            Courses = courses;
 
         }
 
@@ -66,13 +66,13 @@ namespace Contoso.Service {
         }
 
 
-        public int Complete() {
-            return Context.SaveChanges();
-        }
+        //public int Complete() {
+        //    return Context.SaveChanges();
+        //}
 
-        public void Dispose() {
-            Context.Dispose();
-        }
+        //public void Dispose() {
+        //    Context.Dispose();
+        //}
 
         public Course GetCourseIdIncludeInstructorandStudents(int courseId) {
             return Courses.GetCourseIdIncludeInstructorandStudents(courseId);
@@ -95,7 +95,7 @@ namespace Contoso.Service {
         List<Course> GetCoursebyDept(int deptId);
         List<Instructor> GetCourseInstructors(int courseId);
 
-        int Complete();
+        // int Complete();
 
     }
 }

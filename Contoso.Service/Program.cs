@@ -16,13 +16,15 @@ namespace Contoso.Service {
 
             using (var db = new ContosoContext()) {
 
-                //IPersonService PersonService = new PersonService(db);
+                //IPersonService PersonService = new PersonService();
                 //IStudentService StudentService = new StudentService();
                 //IInstructorService InstructorService = new InstructorService(db);
                 //ICourseService CourseService = new CourseService(db);
                 //IDepartmentService DepartmentService = new DepartmentService(db);
                 //IEnrollmentService EnrollmentService = new EnrollmentService(db);
                 //IRoleService RoleService = new RoleService(db);
+
+
 
                 //int studentId = StudentService.AddStudent(new Person() {
                 //    FirstName = "Alexis",

@@ -1,27 +1,69 @@
-﻿@model IList<Contoso.Model.Department>
+﻿@model IEnumerable<Contoso.Model.Department>
+
 @{
     ViewBag.Title = "Index";
 }
 
+<h2>Index</h2>
 
-
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
 <table class="table">
-
     <tr>
-        <td>  Id  </td>
-        <td>   Name </td>
-        <td>  Budget  </td>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedAt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UpdatedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Budget)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.InstrutorId)
+        </th>
+        <th></th>
     </tr>
-     
-    @foreach (var dep in Model) {
+
+@foreach (var item in Model) {
     <tr>
-        <td> @dep.Id</td>
         <td>
-            @Html.ActionLink( dep.Name, "Details", "Department", new {Id = dep.Id}, null)
+            @Html.DisplayFor(modelItem => item.CreatedAt)
         </td>
-        <td> @dep.Budget</td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedAt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UpdatedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Budget)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.InstrutorId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit Department ", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Department Details", "Detailsabc", new { id=item.Id }) |
+            @Html.ActionLink("Delete Department", "Delete", new { id=item.Id })
+        </td>
     </tr>
-    }
-    
-</table>
+}
 
+</table>

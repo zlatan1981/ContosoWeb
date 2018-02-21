@@ -12,15 +12,15 @@ using System.Transactions;
 namespace Contoso.Service {
     public class PersonService : IPersonService {
 
-        private readonly ContosoContext Context;
+        //   private readonly ContosoContext Context;
         private readonly IPersonRepository Persons;
         private readonly IRoleRepository Roles;
 
-        public PersonService(ContosoContext context) {
+        public PersonService(IPersonRepository persons, IRoleRepository roles) {
 
-            Context = context;
-            Persons = new PersonRepository(Context);
-            Roles = new RoleRepository(Context);
+            //   Context = context;
+            Persons = persons;
+            Roles = roles;
 
         }
 
@@ -43,7 +43,8 @@ namespace Contoso.Service {
             Persons.AddOrUpdate(person);
             HashSet<string> rs = new HashSet<string>(roles);
             person.Roles = Roles.Find(r => rs.Contains(r.RoleName)).ToList();
-            Complete();
+            Persons.SaveChanges();
+            //Complete();
             return person.Id;
         }
         // create a new person instance and assign this person a role based on the rolename
@@ -54,7 +55,8 @@ namespace Contoso.Service {
                 var role = Roles.SingleOrDefault(r => r.RoleName == rolename);
                 if (role == null) return -1;
                 person.Roles.Add(role);
-                Complete();
+                Persons.SaveChanges();
+                //Complete();
                 tran.Complete();
                 return person.Id;
             }
@@ -83,13 +85,13 @@ namespace Contoso.Service {
 
         }
 
-        public int Complete() {
-            return Context.SaveChanges();
-        }
+        //public int Complete() {
+        //    return Context.SaveChanges();
+        //}
 
-        public void Dispose() {
-            Context.Dispose();
-        }
+        //public void Dispose() {
+        //    Context.Dispose();
+        //}
     }
 
     public interface IPersonService {
@@ -103,7 +105,7 @@ namespace Contoso.Service {
         Person GetPersonById(int Id);
         List<Person> GetPeopleByRole(int roleId);
         void UpdatePerson(Person person);
-        int Complete();
+        //    int Complete();
 
 
 

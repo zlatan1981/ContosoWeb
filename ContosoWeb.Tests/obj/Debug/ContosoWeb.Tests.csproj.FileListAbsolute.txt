@@ -44,3 +44,8 @@ E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\Contoso.Models.dll.config
 E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\Contoso.Data.pdb
 E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\Contoso.Data.dll.config
 E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\EntityFramework.xml
+E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\WebActivatorEx.dll
+E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\Unity.Abstractions.dll
+E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\Unity.Container.dll
+E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\Unity.Mvc.dll
+E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\Unity.Mvc.xml

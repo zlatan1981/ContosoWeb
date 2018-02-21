@@ -13,11 +13,11 @@ namespace Contoso.Service {
     public class DepartmentService : IDepartmentService {
 
         private readonly IDepartmentRepository Departments;
-        private readonly ContosoContext Context;
+        //  private readonly ContosoContext Context;
 
-        public DepartmentService(ContosoContext context) {
-            Context = context;
-            Departments = new DepartmentRepository(Context);
+        public DepartmentService(IDepartmentRepository departments) {
+            //     Context = context;
+            Departments = departments;
         }
 
 
@@ -60,13 +60,13 @@ namespace Contoso.Service {
             Departments.Update(dept);
         }
 
-        public int Complete() {
-            return Context.SaveChanges();
-        }
+        //public int Complete() {
+        //    return Context.SaveChanges();
+        //}
 
-        public void Dispose() {
-            Context.Dispose();
-        }
+        //public void Dispose() {
+        //    Context.Dispose();
+        //}
 
 
     }
@@ -81,7 +81,7 @@ namespace Contoso.Service {
         List<Department> GetAllDepartmentsIncludeCourses();
         Department GetDepartmentById(int deptId);
         Department GetDepartmentByIdIncludeCourses(int deptId);
-        int Complete();
+        //int Complete();
 
     }
 }

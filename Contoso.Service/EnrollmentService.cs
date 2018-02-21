@@ -19,13 +19,13 @@ namespace Contoso.Service {
         private readonly IStudentRepository Students;
         private readonly ICourseRepository Courses;
         private readonly IEnrollmentRepository Enrollments;
-        private readonly ContosoContext Context;
-
-        public EnrollmentService(ContosoContext context) {
-            Context = context;
-            Courses = new CourseRepository(Context);
-            Students = new StudentRepository(Context);
-            Enrollments = new EnrollmentRepository(Context);
+        //   private readonly ContosoContext Context;
+        // dependency injection!!!!! inversion of control
+        public EnrollmentService(IStudentRepository students, ICourseRepository courses, IEnrollmentRepository enrollments) {
+            //   Context = context;
+            Courses = courses;
+            Students = students;
+            Enrollments = enrollments;
         }
 
         public int AddEnrollment(int StuId, int CourId) {
@@ -69,14 +69,14 @@ namespace Contoso.Service {
             Enrollments.Update(Enrollment);
         }
 
-        public int Complete() {
-            return Context.SaveChanges();
-        }
+        //public int Complete() {
+        //    return Context.SaveChanges();
+        //}
 
 
-        public void Dispose() {
-            Context.Dispose();
-        }
+        //public void Dispose() {
+        //    Context.Dispose();
+        //}
     }
 
 
@@ -89,7 +89,7 @@ namespace Contoso.Service {
         List<Enrollment> GetEnrollmentByStudent(int stuId);
         void UpdateEnrollment(Enrollment Enrollment);
 
-        int Complete();
+        //    int Complete();
 
 
 

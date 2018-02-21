@@ -12,17 +12,17 @@ using Contoso.Model;
 namespace Contoso.Service {
     public class InstructorService : IInstructorService {
 
-        private readonly ContosoContext Context;
+        ///  private readonly ContosoContext Context;
         private readonly IPersonRepository Persons;
         private readonly IInstructorRepository Instructors;
         private readonly ICourseRepository Courses;
 
-        public InstructorService(ContosoContext context) {
+        public InstructorService(IPersonRepository _persons, IInstructorRepository _instructors, ICourseRepository _courses) {
 
-            Context = context;
-            Persons = new PersonRepository(Context);
-            Instructors = new InstructorRepository(Context);
-            Courses = new CourseRepository(Context);
+            // Context = context;
+            Persons = _persons;
+            Instructors = _instructors;
+            Courses = _courses;
 
         }
 
@@ -88,13 +88,13 @@ namespace Contoso.Service {
             Instructors.Update(instructor);
         }
 
-        public int Complete() {
-            return Context.SaveChanges();
-        }
+        //public int Complete() {
+        //    return Context.SaveChanges();
+        //}
 
-        public void Dispose() {
-            Context.Dispose();
-        }
+        //public void Dispose() {
+        //    Context.Dispose();
+        //}
 
 
     }
@@ -113,7 +113,7 @@ namespace Contoso.Service {
 
         void UpdateInstructor(Instructor instructor);
 
-        int Complete();
+        //int Complete();
 
 
     }

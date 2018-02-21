@@ -57,6 +57,7 @@ namespace Contoso.Service {
         }
 
         public void UpdateDepartment(Department dept) {
+            dept.UpdatedAt = DateTime.Now;
             Departments.Update(dept);
         }
 

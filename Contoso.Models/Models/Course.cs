@@ -14,7 +14,7 @@ namespace Contoso.Model {
 
         [MaxLength(70)]
         public string Name { get; set; }
-
+        [Range(1, 4)]
         public int Credits { get; set; }
         public int? DepartmentId { get; set; }
         public Department Department { get; set; }

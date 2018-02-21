@@ -96,6 +96,10 @@
     <Compile Include="Migrations\201802211532377_changeInstructorHireDateDisplayAttr.Designer.cs">
       <DependentUpon>201802211532377_changeInstructorHireDateDisplayAttr.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201802211934528_AddRangeToCourseCredits.cs" />
+    <Compile Include="Migrations\201802211934528_AddRangeToCourseCredits.Designer.cs">
+      <DependentUpon>201802211934528_AddRangeToCourseCredits.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CourseRepository.cs" />
@@ -160,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802211532377_changeInstructorHireDateDisplayAttr.resx">
       <DependentUpon>201802211532377_changeInstructorHireDateDisplayAttr.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201802211934528_AddRangeToCourseCredits.resx">
+      <DependentUpon>201802211934528_AddRangeToCourseCredits.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

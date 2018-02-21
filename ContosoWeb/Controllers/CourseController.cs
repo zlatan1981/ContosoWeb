@@ -1,4 +1,5 @@
 ﻿using Contoso.Data;
+using Contoso.Model;
 using Contoso.Service;
 using System;
 using System.Collections.Generic;
@@ -33,8 +34,21 @@ namespace ContosoWeb.Controllers {
         }
 
         // POST: Course/Create
+        //[HttpPost]
+        //public ActionResult Create(FormCollection collection) {
+        //    try {
+        //        // TODO: Add insert logic here
+
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch {
+        //        return View();
+        //    }
+        //}
+
+        // POST: Course/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection) {
+        public ActionResult Create(Course course) {
             try {
                 // TODO: Add insert logic here
 
@@ -44,15 +58,26 @@ namespace ContosoWeb.Controllers {
                 return View();
             }
         }
-
         // GET: Course/Edit/5
         public ActionResult Edit(int id) {
             return View();
         }
 
         // POST: Course/Edit/5
+        //[HttpPost]
+        //public ActionResult Edit(int id, FormCollection collection) {
+        //    try {
+        //        // TODO: Add update logic here
+
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch {
+        //        return View();
+        //    }
+        //}
+
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection) {
+        public ActionResult Edit(int id, Course course) {
             try {
                 // TODO: Add update logic here
 
@@ -62,6 +87,7 @@ namespace ContosoWeb.Controllers {
                 return View();
             }
         }
+
 
         // GET: Course/Delete/5
         public ActionResult Delete(int id) {

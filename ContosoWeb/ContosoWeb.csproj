@@ -205,7 +205,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Department\Indexabc.cshtml" />
     <Content Include="Views\Department\Details.cshtml" />
-    <Content Include="Views\Course\Index.cshtml" />
+    <Content Include="Views\Course\Index1.cshtml" />
     <Content Include="Views\Course\Details.cshtml" />
     <Content Include="Views\Student\Indexabc.cshtml" />
     <Content Include="Views\Instructor\Indexabc.cshtml" />
@@ -218,6 +218,9 @@
     <Content Include="Views\Instructor\Index.cshtml" />
     <Content Include="Views\Instructor\Create.cshtml" />
     <Content Include="Views\Student\Create.cshtml" />
+    <Content Include="Views\Department\Edit.cshtml" />
+    <Content Include="Views\Course\Create.cshtml" />
+    <Content Include="Views\Course\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

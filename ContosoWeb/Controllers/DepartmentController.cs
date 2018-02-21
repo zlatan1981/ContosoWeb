@@ -78,11 +78,25 @@ namespace ContosoWeb.Controllers {
             return View();
         }
 
+        //// POST: Department/Edit/5
+        //[HttpPost]
+        //public ActionResult Edit(int id, FormCollection collection) {
+        //    try {
+        //        // TODO: Add update logic here
+
+        //        return RedirectToAction("Index");
+        //    }
+        //    catch {
+        //        return View();
+        //    }
+        //}
+
         // POST: Department/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection) {
+        public ActionResult Edit(int id, Department dept) {
             try {
                 // TODO: Add update logic here
+                _departmentService.UpdateDepartment(dept);
 
                 return RedirectToAction("Index");
             }

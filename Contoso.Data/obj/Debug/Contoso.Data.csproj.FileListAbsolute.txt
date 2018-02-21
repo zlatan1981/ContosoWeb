@@ -25,3 +25,4 @@ E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.changeCo
 E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.ChangeCourseNameMaxLength.resources
 E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.ChangePropertyFirstNameLastNameOrderinPersonTbl.resources
 E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.changeInstructorHireDateDisplayAttr.resources
+E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.AddRangeToCourseCredits.resources

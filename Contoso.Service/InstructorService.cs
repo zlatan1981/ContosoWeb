@@ -8,6 +8,7 @@ using Contoso.Data;
 using Contoso.Data.Repositories;
 using Contoso.Data.Repositories.IRepositories;
 using Contoso.Model;
+using ContosoWeb.ViewModels;
 
 namespace Contoso.Service {
     public class InstructorService : IInstructorService {
@@ -44,6 +45,22 @@ namespace Contoso.Service {
 
         }
 
+        public int AddInstructor(InstructorPerson IPerson) {
+
+            using (TransactionScope tran = new TransactionScope()) {
+                Persons.Add(IPerson.Person); // this person is tracked and in context
+                // then we can add as instructor by setting the navigation property.
+                //person.Instructor = new Instructor() {
+                //    Id = person.Id
+                //};
+                IPerson.Instructor.Id = IPerson.Person.Id;
+                Instructors.Add(IPerson.Instructor);
+                //   Complete();
+                tran.Complete();
+                return IPerson.Person.Id;
+            }
+
+        }
 
         public int UpdateInstructor(Person person) {
 
@@ -123,6 +140,7 @@ namespace Contoso.Service {
 
         // add Instructor but take a person as input type return the stu Id
         int AddInstructor(Person person);
+        int AddInstructor(InstructorPerson IPerson);
         int UpdateInstructor(Person person);
         int AddCourseToInstructor(int InstructorId, int CourseId);
 

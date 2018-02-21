@@ -43,6 +43,7 @@ namespace ContosoWeb {
 
             // TODO: Register your type's mappings here.
             // container.RegisterType<IProductRepository, ProductRepository>();
+
             container.RegisterType<ContosoContext>(new InjectionFactory(c => new ContosoContext()));
             container.RegisterType<IPersonRepository, PersonRepository>();
             container.RegisterType<IStudentRepository, StudentRepository>();

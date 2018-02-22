@@ -56,3 +56,5 @@ E:\antra\code\ContosoWeb\ContosoWeb\bin\Unity.Container.dll
 E:\antra\code\ContosoWeb\ContosoWeb\bin\Unity.Mvc.dll
 E:\antra\code\ContosoWeb\ContosoWeb\bin\WebActivatorEx.dll
 E:\antra\code\ContosoWeb\ContosoWeb\bin\Unity.Mvc.xml
+E:\antra\code\ContosoWeb\ContosoWeb\bin\log4net.dll
+E:\antra\code\ContosoWeb\ContosoWeb\bin\log4net.xml

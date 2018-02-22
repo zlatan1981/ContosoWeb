@@ -7,10 +7,10 @@ using Contoso.Data;
 using Contoso.Model;
 using Contoso.Models.ViewModels;
 using Contoso.Service;
-
-
+using ContosoWeb.Filters;
 
 namespace ContosoWeb.Controllers {
+    [HandleError]
     public class DepartmentController : Controller {
         // GET: Department
         //  ContosoContext Context = new ContosoContext();
@@ -20,9 +20,12 @@ namespace ContosoWeb.Controllers {
             _departmentService = departmentService;
             _instructorService = instructorService;
         }
+
+        [ContosoExceptionFilter]
         public ActionResult Index() {
             var depts = _departmentService.GetAllDepartments();
-
+            int i = 0;
+            int y = i / 0;
             return View(depts);
         }
 

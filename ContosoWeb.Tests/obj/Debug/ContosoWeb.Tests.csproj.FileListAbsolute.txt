@@ -49,3 +49,5 @@ E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\Unity.Abstractions.dll
 E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\Unity.Container.dll
 E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\Unity.Mvc.dll
 E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\Unity.Mvc.xml
+E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\log4net.dll
+E:\antra\code\ContosoWeb\ContosoWeb.Tests\bin\Debug\log4net.xml

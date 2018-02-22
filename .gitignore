@@ -1,3 +1,6 @@
 packages/
 bin/
 .vs/
+Content/
+Scripts/
+fonts/

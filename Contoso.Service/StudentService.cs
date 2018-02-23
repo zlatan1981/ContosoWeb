@@ -91,6 +91,16 @@ namespace Contoso.Service {
             Students.Update(student); ///////???? what about person??? 
         }
 
+        public Student GetStudentByIdIncludePerson(int stuId) {
+            return Students.GetStudentByIdIncludePerson(stuId);
+        }
+
+        public Student GetStudentByIdIncludePersonCourses(int StuId) {
+            return Students.GetStudentByIdIncludePersonCourses(StuId);
+        }
+
+
+
         //public int Complete() {
         //    return Context.SaveChanges();
         //}
@@ -110,6 +120,8 @@ namespace Contoso.Service {
         int AddStudent(StudentPerson SPerson);
         int UpdateStudent(Person person);
         Student GetStudentById(int StuId);
+        Student GetStudentByIdIncludePerson(int StuId);
+        Student GetStudentByIdIncludePersonCourses(int StuId);
         List<Student> GetAllStudents();
         List<Student> GetStudentsByCourse(int courseId);
         List<Course> GetStudentCourses(int stuId);

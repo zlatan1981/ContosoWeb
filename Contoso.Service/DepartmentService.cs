@@ -43,6 +43,10 @@ namespace Contoso.Service {
         public List<Department> GetAllDepartments() {
             return (List<Department>)Departments.GetAll();
         }
+        public List<Department> GetAllDepartmentsIncludeInstructor() {
+            return (List<Department>)Departments.GetDepartmentsIncludeInstructor();
+        }
+
 
         public List<Department> GetAllDepartmentsIncludeCourses() {
             return null;
@@ -80,6 +84,7 @@ namespace Contoso.Service {
         void UpdateDepartment(Department dept);
         List<Department> GetAllDepartments();
         List<Department> GetAllDepartmentsIncludeCourses();
+        List<Department> GetAllDepartmentsIncludeInstructor();
         Department GetDepartmentById(int deptId);
         Department GetDepartmentByIdIncludeCourses(int deptId);
         //int Complete();

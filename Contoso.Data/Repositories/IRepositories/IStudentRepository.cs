@@ -9,6 +9,10 @@ namespace Contoso.Data.Repositories.IRepositories {
 
     public interface IStudentRepository : IRepository<Student> {
 
+        Student GetStudentByIdIncludeCourses(int stuId);
+        Student GetStudentByIdIncludePerson(int stuId);
+        Student GetStudentByIdIncludePersonCourses(int stuId);
+
 
 
     }

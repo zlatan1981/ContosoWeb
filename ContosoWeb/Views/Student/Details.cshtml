@@ -1,0 +1,86 @@
+﻿@model Contoso.Model.Student
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h3>@Html.DisplayFor(model => model.Person.FullName)</h3>
+
+<div>
+   
+    <hr />
+    <dl>
+        @*<dt>
+            @Html.DisplayNameFor(model => model.CreatedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedAt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedAt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedBy)
+        </dd>*@
+
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.Person.FullName)
+        </dt>*@
+
+        @*<dd>
+            @Html.DisplayFor(model => model.Person.FullName)
+        </dd>*@
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnrollmentDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnrollmentDate)
+        </dd>
+
+    </dl>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Course</th>
+                <th scope="col">Credits</th>
+               
+            </tr>
+        </thead>
+        @foreach (var enroll in Model.Enrollments) {
+        <tr>
+            <td>@enroll.Course.Name</td>
+            <td>@enroll.Course.Credits</td>
+        </tr>
+}
+
+    </table>
+
+
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

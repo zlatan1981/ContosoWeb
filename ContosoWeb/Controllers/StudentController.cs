@@ -26,7 +26,9 @@ namespace ContosoWeb.Controllers {
 
         // GET: Student/Details/5
         public ActionResult Details(int id) {
-            return View();
+            var student = _studentService.GetStudentByIdIncludePersonCourses(id);
+            //   var stuCourses = _studentService.GetStudentCourses(id);
+            return View(student);
         }
 
         // GET: Student/Create
@@ -119,5 +121,35 @@ namespace ContosoWeb.Controllers {
                 return View();
             }
         }
+
+        // student/Enroll/5
+        public ActionResult Enroll(int id) {
+
+            try {
+                // TODO: Add delete logic here
+
+                return RedirectToAction("Index");
+            }
+            catch {
+                return View();
+            }
+        }
+
+
+
+        // student/Enroll/5
+        [HttpPost]
+        public ActionResult Enroll() {
+
+            try {
+                // TODO: Add delete logic here
+
+                return RedirectToAction("Index");
+            }
+            catch {
+                return View();
+            }
+        }
+
     }
 }

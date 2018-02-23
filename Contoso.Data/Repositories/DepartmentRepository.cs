@@ -20,5 +20,9 @@ namespace Contoso.Data.Repositories {
         public Department GetDepartmentByIdIncludeCourses(int deptId) {
             return ContosoContext.Departments.Where(d => d.Id == deptId).Include(d => d.Courses).FirstOrDefault(); ;
         }
+
+        public List<Department> GetDepartmentsIncludeInstructor() {
+            return ContosoContext.Departments.Include(d => d.Instructor).ToList();
+        }
     }
 }

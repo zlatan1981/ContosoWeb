@@ -15,6 +15,9 @@ namespace Contoso.Model {
         public string FirstName { get; set; }
         [Required, MaxLength(50)]
         public string LastName { get; set; }
+        [NotMapped]
+        [Display(Name = "Name")]
+        public string FullName { get { return FirstName + " " + LastName; } set { FullName = value; } }
         [MaxLength(50)]
         public string MiddleName { get; set; }
         [MaxLength(50)]

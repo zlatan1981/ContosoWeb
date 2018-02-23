@@ -10,7 +10,7 @@ using Contoso.Service;
 using ContosoWeb.Filters;
 
 namespace ContosoWeb.Controllers {
-    [HandleError]
+
     public class DepartmentController : Controller {
         // GET: Department
         //  ContosoContext Context = new ContosoContext();
@@ -23,10 +23,11 @@ namespace ContosoWeb.Controllers {
 
         [ContosoExceptionFilter]
         public ActionResult Index() {
-            var depts = _departmentService.GetAllDepartments();
-            int i = 0;
-            int y = i / 0;
+            var depts = _departmentService.GetAllDepartmentsIncludeInstructor();
+            //  int i = 0;
+            //  int y = i / 0;
             return View(depts);
+            //return Json(depts, JsonRequestBehavior.AllowGet);
         }
 
         // GET: Department/Details/5
@@ -94,11 +95,7 @@ namespace ContosoWeb.Controllers {
         public ActionResult Create(DeptWithInsListViewModel dept) {
             try {
                 // TODO: Add insert logic here
-                //Department dept = new Department() {
-                //    Name = DepartmentName,
-                //    Budget = Budget
-                //};
-                dept.Department.InstrutorId = dept.InsList.SelectedInstructorId;
+                //  dept.Department.InstrutorId = dept.InsList.SelectedInstructorId;
                 _departmentService.AddOrUpdateDepartment(dept.Department);
                 return RedirectToAction("Index");
             }

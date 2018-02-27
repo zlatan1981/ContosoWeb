@@ -18,8 +18,8 @@ namespace Contoso.Model {
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? HireDate { get; set; }
 
-        public virtual ICollection<Course> Courses { get; set; }
-        public virtual OfficeAssignments OfficeAssignments { get; set; }
+        public ICollection<Course> Courses { get; set; }
+        public OfficeAssignments OfficeAssignments { get; set; }
 
         public Instructor() {
             CreatedAt = DateTime.Now;

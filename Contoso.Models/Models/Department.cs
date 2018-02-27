@@ -1,4 +1,5 @@
 ﻿using Contoso.Models.Common;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -20,6 +21,7 @@ namespace Contoso.Model {
 
         [ForeignKey("Instructor")]
         public int? InstrutorId { get; set; }
+        [JsonIgnore]
         public Instructor Instructor { get; set; }
         public ICollection<Course> Courses { get; set; }
 

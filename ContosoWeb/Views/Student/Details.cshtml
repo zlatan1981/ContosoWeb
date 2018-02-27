@@ -61,7 +61,7 @@
 
     </dl>
 
-    <table class="table">
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th scope="col">Course</th>
@@ -77,6 +77,12 @@
 }
 
     </table>
+    <hr />
+
+    @* Generate the partial view *@
+    @*@Html.Action("CheckedCourseList")*@
+    @Html.Partial("_CheckCourseListForm", TempData["CheckedCourseList"])
+
 
 
 </div>
@@ -84,3 +90,7 @@
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
+
+
+
+

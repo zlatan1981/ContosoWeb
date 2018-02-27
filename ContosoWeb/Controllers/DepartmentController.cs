@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using Contoso.Data;
 using Contoso.Model;
+using Contoso.Models.DTO;
 using Contoso.Models.ViewModels;
 using Contoso.Service;
 using ContosoWeb.Filters;
@@ -24,10 +25,20 @@ namespace ContosoWeb.Controllers {
         [ContosoExceptionFilter]
         public ActionResult Index() {
             var depts = _departmentService.GetAllDepartmentsIncludeInstructor();
+            //List<DepartmentDTO> DTOS = new List<DepartmentDTO>();
+            //foreach (var d in depts) {
+            //    DepartmentDTO dto = new DepartmentDTO() {
+            //        Id = d.Id,
+            //        Name = d.Name,
+            //        Budget = d.Budget
+            //    };
+            //    DTOS.Add(dto);
+
+            //}
             //  int i = 0;
             //  int y = i / 0;
             return View(depts);
-            //return Json(depts, JsonRequestBehavior.AllowGet);
+            //return Json(DTOS, JsonRequestBehavior.AllowGet);
         }
 
         // GET: Department/Details/5

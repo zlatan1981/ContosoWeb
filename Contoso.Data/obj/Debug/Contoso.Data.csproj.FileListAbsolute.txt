@@ -38,3 +38,5 @@ E:\antra\code\ContosoWeb\Contoso.Data\bin\Debug\System.Web.WebPages.Razor.xml
 E:\antra\code\ContosoWeb\Contoso.Data\bin\Debug\System.Web.Razor.xml
 E:\antra\code\ContosoWeb\Contoso.Data\bin\Debug\System.Web.WebPages.Deployment.xml
 E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.AddFullNameToPerson.resources
+E:\antra\code\ContosoWeb\Contoso.Data\bin\Debug\Newtonsoft.Json.dll
+E:\antra\code\ContosoWeb\Contoso.Data\bin\Debug\Newtonsoft.Json.xml

@@ -1,0 +1,28 @@
+﻿@model List<Contoso.Models.ViewModels.CheckedCourse>
+
+
+
+<h4>Enroll in more courses</h4>
+
+@using (Html.BeginForm("ProcessCheckedCourses", "Student")) {
+    <div>
+
+        @foreach (var checkedCourse in Model) {
+
+            <div class="form-check">
+                @Html.HiddenFor(model => checkedCourse.Course.Id)
+                @Html.CheckBoxFor(modelItem => checkedCourse.IsChecked)
+                @Html.LabelFor(model => checkedCourse.IsChecked, checkedCourse.Course.Name)
+            </div>
+
+        }
+
+        <div class="form-group">
+            <div class="col-md-10">
+                <input type="submit" value="Enroll" class="btn btn-sm btn-success" />
+            </div>
+        </div>
+
+    </div>
+}
+

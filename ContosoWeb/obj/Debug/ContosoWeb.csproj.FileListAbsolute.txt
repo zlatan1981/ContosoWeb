@@ -58,3 +58,9 @@ E:\antra\code\ContosoWeb\ContosoWeb\bin\WebActivatorEx.dll
 E:\antra\code\ContosoWeb\ContosoWeb\bin\Unity.Mvc.xml
 E:\antra\code\ContosoWeb\ContosoWeb\bin\log4net.dll
 E:\antra\code\ContosoWeb\ContosoWeb\bin\log4net.xml
+E:\antra\code\ContosoWeb\ContosoWeb\bin\System.Net.Http.Formatting.dll
+E:\antra\code\ContosoWeb\ContosoWeb\bin\System.Web.Http.dll
+E:\antra\code\ContosoWeb\ContosoWeb\bin\System.Web.Http.WebHost.dll
+E:\antra\code\ContosoWeb\ContosoWeb\bin\System.Net.Http.Formatting.xml
+E:\antra\code\ContosoWeb\ContosoWeb\bin\System.Web.Http.xml
+E:\antra\code\ContosoWeb\ContosoWeb\bin\System.Web.Http.WebHost.xml

@@ -26,3 +26,5 @@ E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\System.Web.WebPages.xml
 E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\System.Web.WebPages.Razor.xml
 E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\System.Web.Razor.xml
 E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\System.Web.WebPages.Deployment.xml
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\Newtonsoft.Json.dll
+E:\antra\code\ContosoWeb\Contoso.Service\bin\Debug\Newtonsoft.Json.xml

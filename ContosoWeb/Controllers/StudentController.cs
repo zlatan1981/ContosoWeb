@@ -12,9 +12,11 @@ namespace ContosoWeb.Controllers {
     public class StudentController : Controller {
         //ContosoContext Context = new ContosoContext();
         private IStudentService _studentService;
+        private ICourseService _courseService;
 
-        public StudentController(IStudentService studentService) {
+        public StudentController(IStudentService studentService, ICourseService courseService) {
             _studentService = studentService;
+            _courseService = courseService;
         }
 
         // GET: Student
@@ -28,7 +30,52 @@ namespace ContosoWeb.Controllers {
         public ActionResult Details(int id) {
             var student = _studentService.GetStudentByIdIncludePersonCourses(id);
             //   var stuCourses = _studentService.GetStudentCourses(id);
+            TempData["CheckedCourseList"] = GetCheckedCourseList();
             return View(student);
+        }
+        [HttpPost]
+        public ActionResult ProcessCheckedCourses(List<CheckedCourse> courses) {
+            //     var student = _studentService.GetStudentByIdIncludePersonCourses(id);
+
+            //   var stuCourses = _studentService.GetStudentCourses(id);
+            //    TempData["CheckedCourseList"] = GetCheckedCourseList();
+            //    return View(student);
+
+            try {
+                // TODO: Add insert logic here
+
+                return RedirectToAction("Index");
+            }
+            catch {
+                return View();
+            }
+
+        }
+
+
+        // this partial view action will be called by the Details action above
+        // to display the checkedbox course list
+        [HttpGet]
+        public PartialViewResult CheckCoursesList() {
+            //for partial view    
+            List<CheckedCourse> checkedcourses = new List<CheckedCourse>();
+            List<Course> allcourses = _courseService.GetAllCourses();
+            foreach (var course in allcourses) {
+                CheckedCourse cc = new CheckedCourse(course);
+                checkedcourses.Add(cc);
+            }
+            return PartialView("_CheckCourseListForm", checkedcourses);
+        }
+
+        [NonAction]
+        private List<CheckedCourse> GetCheckedCourseList() {
+            List<CheckedCourse> checkedcourses = new List<CheckedCourse>();
+            List<Course> allcourses = _courseService.GetAllCourses();
+            foreach (var course in allcourses) {
+                CheckedCourse cc = new CheckedCourse(course);
+                checkedcourses.Add(cc);
+            }
+            return checkedcourses;
         }
 
         // GET: Student/Create
@@ -88,7 +135,12 @@ namespace ContosoWeb.Controllers {
 
         // GET: Student/Edit/5
         public ActionResult Edit(int id) {
-            return View();
+            Student stu = _studentService.GetStudentByIdIncludePerson(id);
+            StudentPerson sp = new StudentPerson() {
+                Student = stu,
+                Person = stu.Person
+            };
+            return View(sp);
         }
 
         // POST: Student/Edit/5
@@ -103,6 +155,21 @@ namespace ContosoWeb.Controllers {
                 return View();
             }
         }
+
+        // POST: Student/Edit/5
+        [HttpPost]
+        public ActionResult Edit(int id, StudentPerson SPerson) {
+            try {
+
+                // TODO: Add update logic here
+                _studentService.UpdateStudent(SPerson.Student);
+                return RedirectToAction("Index");
+            }
+            catch {
+                return View();
+            }
+        }
+
 
         // GET: Student/Delete/5
         public ActionResult Delete(int id) {

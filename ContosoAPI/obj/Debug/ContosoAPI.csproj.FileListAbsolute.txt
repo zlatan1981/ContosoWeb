@@ -48,3 +48,10 @@ E:\antra\code\ContosoWeb\ContosoAPI\bin\Ninject.Web.Common.xml
 E:\antra\code\ContosoWeb\ContosoAPI\bin\Ninject.Web.WebApi.xml
 E:\antra\code\ContosoWeb\ContosoAPI\bin\Ninject.Web.Common.WebHost.dll
 E:\antra\code\ContosoWeb\ContosoAPI\bin\Ninject.Web.Common.WebHost.xml
+E:\antra\code\ContosoWeb\ContosoAPI\bin\Antlr3.Runtime.dll
+E:\antra\code\ContosoWeb\ContosoAPI\bin\System.Web.Helpers.dll
+E:\antra\code\ContosoWeb\ContosoAPI\bin\System.Web.Optimization.dll
+E:\antra\code\ContosoWeb\ContosoAPI\bin\WebGrease.dll
+E:\antra\code\ContosoWeb\ContosoAPI\bin\Antlr3.Runtime.pdb
+E:\antra\code\ContosoWeb\ContosoAPI\bin\System.Web.Helpers.xml
+E:\antra\code\ContosoWeb\ContosoAPI\bin\System.Web.Optimization.xml

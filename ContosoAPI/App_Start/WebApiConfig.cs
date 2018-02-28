@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
 
-namespace ContosoAPI
-{
-    public static class WebApiConfig
-    {
-        public static void Register(HttpConfiguration config)
-        {
+namespace ContosoAPI {
+    public static class WebApiConfig {
+        public static void Register(HttpConfiguration config) {
             // Web API configuration and services
 
             // Web API routes
@@ -19,6 +16,8 @@ namespace ContosoAPI
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.Formatters.JsonFormatter.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
         }
     }
 }

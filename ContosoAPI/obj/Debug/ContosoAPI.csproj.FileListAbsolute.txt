@@ -39,3 +39,12 @@ E:\antra\code\ContosoWeb\ContosoAPI\bin\System.Web.WebPages.xml
 E:\antra\code\ContosoWeb\ContosoAPI\bin\System.Web.WebPages.Razor.xml
 E:\antra\code\ContosoWeb\ContosoAPI\bin\System.Web.Razor.xml
 E:\antra\code\ContosoWeb\ContosoAPI\bin\System.Web.WebPages.Deployment.xml
+E:\antra\code\ContosoWeb\ContosoAPI\bin\Ninject.dll
+E:\antra\code\ContosoWeb\ContosoAPI\bin\Ninject.Web.Common.dll
+E:\antra\code\ContosoWeb\ContosoAPI\bin\Ninject.Web.WebApi.dll
+E:\antra\code\ContosoWeb\ContosoAPI\bin\WebActivatorEx.dll
+E:\antra\code\ContosoWeb\ContosoAPI\bin\Ninject.xml
+E:\antra\code\ContosoWeb\ContosoAPI\bin\Ninject.Web.Common.xml
+E:\antra\code\ContosoWeb\ContosoAPI\bin\Ninject.Web.WebApi.xml
+E:\antra\code\ContosoWeb\ContosoAPI\bin\Ninject.Web.Common.WebHost.dll
+E:\antra\code\ContosoWeb\ContosoAPI\bin\Ninject.Web.Common.WebHost.xml

@@ -15,12 +15,9 @@ namespace ContosoAPI.Controllers {
     public class DepartmentController : ApiController {
         // GET: api/Department
         IDepartmentService _departmentservice;
-        ContosoContext context = new ContosoContext();
 
-
-        public DepartmentController() {
-            IDepartmentRepository deprepo = new DepartmentRepository(context);
-            _departmentservice = new DepartmentService(deprepo);
+        public DepartmentController(IDepartmentService departmentService) {
+            _departmentservice = departmentService;
         }
         [HttpGet]
         [Route("")]

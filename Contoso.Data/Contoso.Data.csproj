@@ -104,6 +104,10 @@
     <Compile Include="Migrations\201802222041554_AddFullNameToPerson.Designer.cs">
       <DependentUpon>201802222041554_AddFullNameToPerson.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201803061442210_addsomeRequiredAnnotationtoSomeModels.cs" />
+    <Compile Include="Migrations\201803061442210_addsomeRequiredAnnotationtoSomeModels.Designer.cs">
+      <DependentUpon>201803061442210_addsomeRequiredAnnotationtoSomeModels.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\CourseRepository.cs" />
@@ -174,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201802222041554_AddFullNameToPerson.resx">
       <DependentUpon>201802222041554_AddFullNameToPerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201803061442210_addsomeRequiredAnnotationtoSomeModels.resx">
+      <DependentUpon>201803061442210_addsomeRequiredAnnotationtoSomeModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup />

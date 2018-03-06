@@ -32,6 +32,17 @@ namespace Contoso.Service {
 
         }
 
+        public int AddCourse(Course course) {
+            using (TransactionScope tran = new TransactionScope()) {
+                Courses.Add(course);
+                //   Complete();
+                tran.Complete();
+                return course.Id;
+            }
+
+        }
+
+
         public void AddCourses(IEnumerable<Course> courses) {
             using (TransactionScope tran = new TransactionScope()) {
                 Courses.AddRange(courses);
@@ -85,6 +96,7 @@ namespace Contoso.Service {
 
         //        int AddCourse(Course Course);
         int AddOrUpdateCourse(Course course);
+        int AddCourse(Course course);
         void AddCourses(IEnumerable<Course> courses);
         List<Course> GetAllCourses();
 

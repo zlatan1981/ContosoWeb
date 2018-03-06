@@ -1,4 +1,5 @@
 ﻿using Contoso.Models.Common;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -13,8 +14,10 @@ namespace Contoso.Model {
     public class Course : AudibleEntity {
 
         [MaxLength(70)]
+        [Required]
         public string Name { get; set; }
         [Range(1, 4)]
+        [Required]
         public int Credits { get; set; }
         public int? DepartmentId { get; set; }
         public Department Department { get; set; }
@@ -22,8 +25,9 @@ namespace Contoso.Model {
         public Course() {
             CreatedAt = DateTime.Now;
         }
-
+        [JsonIgnore]
         public virtual ICollection<Instructor> Instructors { get; set; }
+        [JsonIgnore]
         public virtual ICollection<Enrollment> Enrollments { get; set; }
 
 

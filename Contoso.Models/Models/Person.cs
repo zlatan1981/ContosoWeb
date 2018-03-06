@@ -44,7 +44,7 @@ namespace Contoso.Model {
         public DateTime? LastLockedDateTime { get; set; }
         public int? FailedAttempts { get; set; }
         public DateTime? DateofBirth { get; set; }
-
+        [JsonIgnore]
         public virtual ICollection<Role> Roles { get; set; }
         [JsonIgnore]
         public virtual Student Student { get; set; }

@@ -16,7 +16,9 @@ namespace Contoso.Model {
 
 
         [MaxLength(50)]
+        [Required]
         public string Name { get; set; }
+        [Required]
         public decimal Budget { get; set; }
 
         [ForeignKey("Instructor")]

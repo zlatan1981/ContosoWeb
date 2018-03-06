@@ -40,3 +40,4 @@ E:\antra\code\ContosoWeb\Contoso.Data\bin\Debug\System.Web.WebPages.Deployment.x
 E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.AddFullNameToPerson.resources
 E:\antra\code\ContosoWeb\Contoso.Data\bin\Debug\Newtonsoft.Json.dll
 E:\antra\code\ContosoWeb\Contoso.Data\bin\Debug\Newtonsoft.Json.xml
+E:\antra\code\ContosoWeb\Contoso.Data\obj\Debug\Contoso.Data.Migrations.addsomeRequiredAnnotationtoSomeModels.resources

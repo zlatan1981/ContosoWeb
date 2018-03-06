@@ -1,4 +1,5 @@
 ﻿using Contoso.Models.Common;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -17,6 +18,7 @@ namespace Contoso.Model {
         public string LastName { get; set; }
         [NotMapped]
         [Display(Name = "Name")]
+        [JsonIgnore]
         public string FullName { get { return FirstName + " " + LastName; } set { FullName = value; } }
         [MaxLength(50)]
         public string MiddleName { get; set; }
@@ -44,7 +46,9 @@ namespace Contoso.Model {
         public DateTime? DateofBirth { get; set; }
 
         public virtual ICollection<Role> Roles { get; set; }
+        [JsonIgnore]
         public virtual Student Student { get; set; }
+        [JsonIgnore]
         public virtual Instructor Instructor { get; set; }
 
         public Person() {

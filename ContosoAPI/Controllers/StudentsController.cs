@@ -1,4 +1,6 @@
-﻿using Contoso.Service;
+﻿using Contoso.Model;
+using Contoso.Models.ViewModels;
+using Contoso.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,6 +42,7 @@ namespace ContosoAPI.Controllers {
         }
 
         [HttpGet]
+        [Route("{id:int}", Name = "GetStudentById")]
         public HttpResponseMessage GetStudentById(int id) {
             if (id < 0) {
                 return Request.CreateResponse(HttpStatusCode.BadRequest);
@@ -54,6 +57,89 @@ namespace ContosoAPI.Controllers {
             }
 
         }
+        [HttpPost]
+        [Route("")]
+        public HttpResponseMessage Post([FromBody] StudentPerson student) {
+            if (!ModelState.IsValid) {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Student data is invalid.");
+            }
+
+
+            try {
+                _Studentservice.AddStudent(student);
+                var message = Request.CreateResponse(HttpStatusCode.Created, student);
+                message.Headers.Location = new Uri(Url.Link("GetStudentById", new { id = student.Person.Id }));
+                return message;
+
+            }
+            catch (Exception ex) {
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Some internal error occurs...");
+            }
+        }
+
+        //[HttpPost]
+        //[Route("")]
+        //public HttpResponseMessage Post([FromBody] Student student) {
+        //    if (!ModelState.IsValid) {
+        //        return Request.CreateResponse(HttpStatusCode.BadRequest, "Student data is invalid.");
+        //    }
+
+
+        //    try {
+        //        _Studentservice.AddStudent(student);
+        //        var message = Request.CreateResponse(HttpStatusCode.Created, student);
+        //        message.Headers.Location = new Uri(Url.Link("GetStudentById", new { id = student.Person.Id }));
+        //        return message;
+
+        //    }
+        //    catch (Exception ex) {
+        //        return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Some internal error occurs...");
+        //    }
+        //}
+
+
+
+        //[HttpPut]
+        //[Route("{id:int}")]
+        //public HttpResponseMessage Put([FromUri] int id, [FromBody] Student student) {
+        //    if (!ModelState.IsValid) {
+        //        return Request.CreateResponse(HttpStatusCode.BadRequest, "Student data is invalid.");
+        //    }
+        //    try {
+        //        Student stu = _Studentservice.GetStudentById(id);
+        //        if (stu == null) {
+        //            return Request.CreateResponse(HttpStatusCode.NotFound, "Student with Id " + id.ToString() + " not found to update");
+        //        }
+        //        _Studentservice.UpdateStudent(student);
+        //        return Request.CreateResponse(HttpStatusCode.OK, student);
+
+        //    }
+        //    catch (Exception ex) {// should log ex ourselves, should not return to the user
+        //        return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Some internal error occurs...");
+        //    }
+        //}
+
+        [HttpPut]
+        [Route("{id:int}")]
+        public HttpResponseMessage Put([FromUri] int id, [FromBody] StudentPerson student) {
+            if (!ModelState.IsValid) {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Student data is invalid.");
+            }
+            try {
+                Student stu = _Studentservice.GetStudentById(id);
+                if (stu == null) {
+                    return Request.CreateResponse(HttpStatusCode.NotFound, "Student with Id " + id.ToString() + " not found to update");
+                }
+                _Studentservice.UpdateStudent(student);
+                return Request.CreateResponse(HttpStatusCode.OK, student);
+
+            }
+            catch (Exception ex) {// should log ex ourselves, should not return to the user
+                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "Some internal error occurs...");
+            }
+        }
+
+
 
     }
 }

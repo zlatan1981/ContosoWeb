@@ -44,8 +44,10 @@ namespace Contoso.Data.Repositories {
         public virtual IEnumerable<T> GetAll() {
             return Table.ToList();
         }
-
+        // the table already has a entity that has same id as this entity
         public void Update(T entity) {
+            var old = Table.Find(entity.Id);
+            Context.Entry(old).State = EntityState.Detached;
             Table.Attach(entity);
             Context.Entry(entity).State = EntityState.Modified;
             SaveChanges();

@@ -58,6 +58,23 @@ namespace ContosoAPI.Controllers {
             }
 
         }
+        [HttpPost]
+        [Route("")]
+        public HttpResponseMessage AddDepartment(Department dept) {
+            if (!ModelState.IsValid) {
+                return Request.CreateResponse(HttpStatusCode.BadRequest, "Department data is invalid.");
+            }
+            try {
+                _departmentservice.AddOrUpdateDepartment(dept);
+            }
+            catch (Exception ex) {
+                return Request.CreateResponse(HttpStatusCode.InternalServerError, "Exception happens..");
+
+            }
+
+            return Request.CreateResponse(HttpStatusCode.Created, "Department Add");
+
+        }
 
     }
 }

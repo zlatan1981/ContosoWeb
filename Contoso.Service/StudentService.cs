@@ -88,7 +88,13 @@ namespace Contoso.Service {
         }
 
         public void UpdateStudent(Student student) {
+            Persons.Update(student.Person);
             Students.Update(student); ///////???? what about person??? 
+        }
+
+        public void UpdateStudent(StudentPerson student) {
+            Persons.Update(student.Person);
+            Students.Update(student.Student);
         }
 
         public Student GetStudentByIdIncludePerson(int stuId) {
@@ -97,6 +103,13 @@ namespace Contoso.Service {
 
         public Student GetStudentByIdIncludePersonCourses(int StuId) {
             return Students.GetStudentByIdIncludePersonCourses(StuId);
+        }
+
+        public int AddStudent(Student student) {
+            Persons.Add(student.Person);
+            student.Id = student.Person.Id;
+            Students.Add(student);
+            return student.Id;
         }
 
 
@@ -118,6 +131,7 @@ namespace Contoso.Service {
         // add student but take a person as input type return the stu Id
         int AddStudent(Person person);
         int AddStudent(StudentPerson SPerson);
+        int AddStudent(Student student);
         int UpdateStudent(Person person);
         Student GetStudentById(int StuId);
         Student GetStudentByIdIncludePerson(int StuId);
@@ -126,6 +140,7 @@ namespace Contoso.Service {
         List<Student> GetStudentsByCourse(int courseId);
         List<Course> GetStudentCourses(int stuId);
         void UpdateStudent(Student student);
+        void UpdateStudent(StudentPerson student);
 
         //int Complete();
 

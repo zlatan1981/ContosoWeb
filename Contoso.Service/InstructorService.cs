@@ -126,6 +126,12 @@ namespace Contoso.Service {
             Instructors.Update(instructor);
         }
 
+        public void UpdateInstructor(InstructorPerson instructor) {
+            Persons.Update(instructor.Person);
+            Instructors.Update(instructor.Instructor);
+        }
+
+
         //public int Complete() {
         //    return Context.SaveChanges();
         //}
@@ -142,8 +148,11 @@ namespace Contoso.Service {
         // add Instructor but take a person as input type return the stu Id
         int AddInstructor(Person person);
         int AddInstructor(InstructorPerson IPerson);
-        int UpdateInstructor(Person person);
         int AddCourseToInstructor(int InstructorId, int CourseId);
+
+        int UpdateInstructor(Person person);
+        void UpdateInstructor(InstructorPerson instructor);
+        void UpdateInstructor(Instructor instructor);
 
         Instructor GetInstructorById(int StuId);
         List<Instructor> GetAllInstructors();
@@ -151,7 +160,7 @@ namespace Contoso.Service {
         List<Instructor> GetInstructorsByCourse(int courseId);
         List<Course> GetInstructorCourses(int instructorId);
 
-        void UpdateInstructor(Instructor instructor);
+
 
         //int Complete();
 

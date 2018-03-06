@@ -1,4 +1,5 @@
 ﻿using Contoso.Models.Common;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -16,7 +17,7 @@ namespace Contoso.Model {
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}", ApplyFormatInEditMode = true)]
         [Display(Name = "Enrollment Date")]
         public DateTime? EnrollmentDate { get; set; }
-
+        [JsonIgnore]
         public virtual ICollection<Enrollment> Enrollments { get; set; }
 
         public Student() {

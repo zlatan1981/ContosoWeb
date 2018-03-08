@@ -6,9 +6,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ContosoAPI.Controllers {
     [RoutePrefix("api/courses")]
+    [EnableCors("*", "*", "*")]
     public class CoursesController : ApiController {
         // GET: api/Courses
         ICourseService _Courseservice;

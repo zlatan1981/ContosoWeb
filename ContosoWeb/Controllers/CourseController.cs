@@ -10,7 +10,7 @@ using System.Web.Mvc;
 namespace ContosoWeb.Controllers {
     public class CourseController : Controller {
 
-        private ICourseService _courseService;
+        private readonly ICourseService _courseService;
         public CourseController(ICourseService courseService) {
             _courseService = courseService;
         }
